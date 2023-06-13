@@ -1,20 +1,22 @@
 import React from "react";
-import logo from "../icons_assets/Logo.svg";
+import logo from "../assets/icons/littlelemon_logo.png";
+import '../assets/css/_Nav.scss'
+
 const Nav = () => {
   return (
-    <React.Fragment>
-      <img src={logo} alt="logo"></img>
+    <div className="nav">
+      <img src={logo} alt="logo" className="logo"></img>
       <ul>
         <li>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Menu</a>
-          <a href="/">Reservations</a>
-          <a href="/">Order Online</a>
-          <a href="/">Login</a>
+          <a href="/">home</a>
+          <a href="/">about</a>
+          <a href="/">menu</a>
+          <a href="/">reservations</a>
+          <a href="/">order online</a>
+          <a href="/">login</a>
         </li>
       </ul>
-    </React.Fragment>
+    </div>
   );
 };
 

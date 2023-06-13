@@ -1,38 +1,39 @@
 import React from "react";
-import logo from "../icons_assets/Logo.svg";
+import footerLogo from "../assets/icons/small_logo.png";
+import '../assets/css/_Footer.scss'
 
 const Footer = () => {
   return (
-    <React.Fragment>
-      <img src={logo} alt="logo"></img>
+    <div className="footer">
+      <img src={footerLogo} alt="footerLogo" className="footerLogo"></img>
       <ul>
-        <li>
-          <p>Doormat</p>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Menu</a>
-          <a href="/">Reservations</a>
-          <a href="/">Order Online</a>
-          <a href="/">Login</a>
+        <li className="listOne">
+          <p>document navigation</p>
+          <a href="/">home</a>
+          <a href="/">about</a>
+          <a href="/">menu</a>
+          <a href="/">reservations</a>
+          <a href="/">order online</a>
+          <a href="/">login</a>
         </li>
       </ul>
       <ul>
-        <li>
-          <p>Contact</p>
+        <li className="lisTwo">
+          <p>contact</p>
           <a href="/">address</a>
-          <a href="/">Phone number</a>
-          <a href="/">Email</a>
+          <a href="/">phone number</a>
+          <a href="/">email</a>
         </li>
       </ul>
       <ul>
-        <li>
-          <p>Social Media Links</p>
+        <li className="lisThree">
+          <p>social media links</p>
           <a href="/">address</a>
-          <a href="/">Phone number</a>
-          <a href="/">Email</a>
+          <a href="/">phone number</a>
+          <a href="/">email</a>
         </li>
       </ul>
-    </React.Fragment>
+    </div>
   );
 };
 

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Header from './component/Header';
@@ -10,10 +9,11 @@ function App() {
   return (
     <React.Fragment className="App">
       <Nav></Nav>
-      <Header></Header>
+      {/* <Header></Header>*/}
       <Main></Main>
       <Footer></Footer>
     </React.Fragment>
+    
   );
 }
 
