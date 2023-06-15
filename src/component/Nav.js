@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "../assets/icons/littlelemon_logo.png";
-import '../assets/css/_Nav.scss'
+import "../assets/css/_Nav.scss";
 
 const Nav = () => {
   return (
-    <div className="nav">
+    <nav className="nav">
       <img src={logo} alt="logo" className="logo"></img>
       <ul>
         <li>
@@ -16,7 +16,7 @@ const Nav = () => {
           <a href="/">login</a>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 

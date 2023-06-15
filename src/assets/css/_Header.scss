@@ -1,0 +1,52 @@
+@use './mixin/button' as *;
+@use './mixin/image' as *;
+
+.header {
+    grid-gap: 30%;
+    height: 23vw;
+}
+.header,
+.about {
+    background-color: #495E57;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0 20%;
+    margin-bottom: 10%;
+    text-transform: capitalize;
+
+    .headerLogo {
+        @include image();
+    }
+
+    section {
+        line-height: 0.75;
+
+        .h1 {
+            color: #F4CE14;
+            font-size: 4.35vw;
+            white-space: nowrap;
+            margin-bottom: 0;
+        }
+
+        .h3 {
+            font-size: 2.65vw;
+            margin: 0;
+        }
+
+        .p {
+            font-size: 1vw;
+            font-family: 'Karla', sans-serif;
+            line-height: 1.5;
+        }
+
+        button {
+            @include button();
+            padding: 5%;
+        }
+
+        button:hover {
+            color: #495E57;
+        }
+    }
+}

@@ -1,26 +1,37 @@
 .footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    // margin: 0;
-    padding: 1% 15% 1% 15%;
+    padding: 1% 20%;
+
     .footerLogo {
         width: 60%;
         height: 100%;
     }
+
     ul {
         margin: 0;
+
         li {
             white-space: nowrap;
             text-transform: capitalize;
             display: grid;
-            p{
-                font-size: 1.5vw;
+
+            p {
+                font-size: 1.55vw;
                 font-weight: bold;
             }
+
             a {
                 text-decoration: none;
                 color: black;
                 font-size: 1vw;
+                display: list-item;
+                margin-left: 15%;
+                font-family: 'Karla', sans-serif;
+            }
+            a:hover {
+                color: #495E57;
+                text-decoration: underline;
             }
         }
     }

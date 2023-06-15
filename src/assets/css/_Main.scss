@@ -1,6 +1,89 @@
+@use './mixin/button' as *;
+
 .main {
-    background-color: #495E57;
-    // width: 30vw;
-    height: 30vw;
-    color: white;
+    padding: 1% 20%;
+    text-transform: capitalize;
+
+    .titleSection {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 25%;
+        margin-bottom: 5%;
+
+        .h1 {
+            font-size: 4.35vw;
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        button {
+            @include button();
+        }
+
+        button:hover {
+            color: #495E57;
+        }
+    }
+
+    .cardsSection {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 5%;
+
+        card {
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            background-color: #EDEFEE;
+            img {
+                width: 100%;
+                height: 40%;
+                object-fit: cover;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+
+            }
+
+            div {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                white-space: nowrap;
+                padding: 0% 10%;
+                margin: 0;
+                font-weight: bold;
+                font-size: 1.55vw;
+                .price {
+                    color: #EE9972;
+                    text-align: right;
+                }
+            }
+
+            .cardDescription {
+                padding: 0% 10%;
+                color : #495E57;
+                font-size: 1vw;
+                height: 25%;
+                font-family: 'Karla', sans-serif;
+
+            }
+
+            button {
+                border: none;
+                padding: 10%;
+                text-transform: capitalize;
+                font-weight: bold;
+                white-space: nowrap;
+                font-size: 1vw;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 4%;
+                cursor: pointer;
+                .icon{
+                    font-size: 1.35vw;
+                }
+            }
+            button:hover {
+                color: #495E57;
+            }
+        }
+    }
 }

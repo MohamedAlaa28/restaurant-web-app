@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+body {
+  font-family: 'Markazi Text', serif;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,6 +38,7 @@
     transform: rotate(360deg);
   }
 }
+
 /* 
 .nav {
   background-color: red;

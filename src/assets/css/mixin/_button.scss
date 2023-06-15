@@ -1,0 +1,17 @@
+@mixin button {
+    height: 4vw;
+    text-transform: capitalize;
+    white-space: nowrap;
+    font-weight: bold;
+    border: none;
+    font-size: 1.55vw;
+    outline: none;
+    color: black;
+    cursor: pointer;
+    background-color: #F4CE14;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}

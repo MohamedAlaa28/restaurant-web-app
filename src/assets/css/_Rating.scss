@@ -1,0 +1,55 @@
+.rating {
+    padding: 1% 20%;
+    text-transform: capitalize;
+    font-family: 'Karla', sans-serif;
+    
+    .h1 {
+        font-size: 4.35vw;
+        white-space: nowrap;
+        margin: 0;
+        text-align: center;
+        padding: 5% 0;
+    }
+
+    .ratingSection {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2.5%;
+
+        card {
+            // border-radius: 16px;
+            background-color: #EDEFEE;
+            padding: 5%;
+            display: grid;
+            grid-gap: 2.5%;
+            .stars{
+                color: gold;
+                display: block;
+                width: 10%;
+                height: 10%;
+            }
+            div {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                white-space: nowrap;
+                grid-gap: 1vw;
+
+                img {
+                    width: 5vw;
+                    height: 5vw;
+                }
+                p{
+                    font-size: 1.1vw;
+                    margin-top: 25%;
+
+                }
+                
+            }
+            .comment{
+                font-size: 1vw;
+                // height: 40%;
+            }
+        }
+    }
+
+}

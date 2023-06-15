@@ -1,10 +1,10 @@
 import React from "react";
 import footerLogo from "../assets/icons/small_logo.png";
-import '../assets/css/_Footer.scss'
+import "../assets/css/_Footer.scss";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <img src={footerLogo} alt="footerLogo" className="footerLogo"></img>
       <ul>
         <li className="listOne">
@@ -33,7 +33,7 @@ const Footer = () => {
           <a href="/">email</a>
         </li>
       </ul>
-    </div>
+    </footer>
   );
 };
 
