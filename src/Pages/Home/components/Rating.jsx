@@ -1,9 +1,9 @@
 import React from "react";
-import "../assets/css/_Rating.scss";
-import profile_1 from "../assets/images/3ca412176fe4306326b04a78b51fa148c49f99c1.svg";
-import profile_2 from "../assets/images/b64f988f077b50ffdab0afee9de4d701e4a9d5da.svg";
-import profile_3 from "../assets/images/08c5772c481233a30a46aeca552132053604e2a8.svg";
-import profile_4 from "../assets/images/44dd2beb0c06094368ffbb7fa1843005cfdae174.svg";
+import "../../../assets/css/_Rating.scss";
+import profile_1 from "../../../assets/images/3ca412176fe4306326b04a78b51fa148c49f99c1.svg";
+import profile_2 from "../../../assets/images/b64f988f077b50ffdab0afee9de4d701e4a9d5da.svg";
+import profile_3 from "../../../assets/images/08c5772c481233a30a46aeca552132053604e2a8.svg";
+import profile_4 from "../../../assets/images/44dd2beb0c06094368ffbb7fa1843005cfdae174.svg";
 // import { Value } from "sass";
 import { AiFillStar } from "react-icons/ai";
 import { IoIosStarHalf } from "react-icons/io";
@@ -50,14 +50,16 @@ const Rate = () => {
       <p className="h1">testimonials</p>
       <section className="ratingSection">
         {cards.map((card) => (
-          <card key={card.id}>
-            <Rating value={card.rateValue} readonly className="stars" />
+          <section key={card.id} className="card">
             <div>
-              <img src={card.Image} alt="mainLogo" className="mainLogo"></img>
-              <p>{card.name}</p>
+              <Rating value={card.rateValue} readonly className="stars" />
+              <div className="profile">
+                <img src={card.Image} alt="mainLogo" className="mainLogo"></img>
+                <p>{card.name}</p>
+              </div>
             </div>
             <p className="comment">{card.comment}</p>
-          </card>
+          </section>
         ))}
       </section>
     </div>

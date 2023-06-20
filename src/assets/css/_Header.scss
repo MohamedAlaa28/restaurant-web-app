@@ -1,48 +1,73 @@
 @use './mixin/button' as *;
 @use './mixin/image' as *;
 
+
 .header {
-    grid-gap: 30%;
-    height: 23vw;
+    margin-bottom: 10%;
 }
+
 .header,
 .about {
     background-color: #495E57;
     color: white;
     display: grid;
-    grid-template-columns: 1fr 2fr;
     padding: 0 20%;
-    margin-bottom: 10%;
-    text-transform: capitalize;
+    position: relative;
+
+    @media (min-width: 701px) {
+        grid-template-columns: 1fr 1fr;
+        height: 25vw;
+    }
+
+    @media (max-width: 700px) {
+        grid-template-rows: 1fr 2fr;
+        height: 100vw;
+    }
 
     .headerLogo {
         @include image();
+
+        @media (min-width: 701px) {
+            margin: 15% 0 0 35%;
+        }
+
+        @media (max-width: 700px) {
+            grid-template-rows: 1fr 2fr;
+            margin-top: 5%;
+            justify-self: center;
+        }
+
     }
 
     section {
         line-height: 0.75;
 
+        @media (max-width: 700px) {
+            justify-self: center;
+            padding: 0;
+        }
+
         .h1 {
             color: #F4CE14;
-            font-size: 4.35vw;
+            font-size: var(--h1-font-size);
             white-space: nowrap;
             margin-bottom: 0;
         }
 
         .h3 {
-            font-size: 2.65vw;
+            font-size: var(--h3-font-size);
             margin: 0;
         }
 
         .p {
-            font-size: 1vw;
             font-family: 'Karla', sans-serif;
+            font-size: var(--p-font-size);
             line-height: 1.5;
+            padding-top: 5%;
         }
 
         button {
             @include button();
-            padding: 5%;
         }
 
         button:hover {

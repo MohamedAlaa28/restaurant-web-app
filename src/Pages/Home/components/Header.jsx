@@ -1,6 +1,7 @@
 import React from "react";
-import headerLogo from "../assets/icons/restauranfood.jpg";
-import "../assets/css/_Header.scss";
+import headerLogo from "../../../assets/icons/restauranfood.jpg";
+import "../../../assets/css/_Header.scss";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
           We re family owned Mediterranean restaurant focused on traditional
           recipes served with a modern twist.
         </p>
-        <button>reserve table</button>
+        <Link to={'./booking'}><button>reserve table</button></Link>
       </section>
       <img src={headerLogo} alt="headerLogo" className="headerLogo"></img>
     </header>

@@ -1,8 +1,9 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 body {
   font-family: 'Markazi Text', serif;
+  text-transform: capitalize;
 }
 .App-logo {
   height: 40vmin;

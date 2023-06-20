@@ -1,50 +1,35 @@
 @use './_Header';
 
 .about {
-    margin: 10% 0%;
-    height: 30vw;
-
-    .textSection {
-        padding-top: 15%;
-    }
-
+    margin-top: 5%;
+    // margin: 5% 0;
     .imagesSection {
         position: relative;
 
         img {
-            width: 70%;
-            height: 70%;
-            margin-left: 10%;
-            transition: opacity 0.3s ease-in-out;
+            @media (min-width: 701px) {
+                margin: 30% 0 0 5%;
+            }
+
+            @media (max-width: 700px) {
+                margin: 20% 5% 0 0;
+            }
+
         }
 
         .headerLogoOver {
             position: absolute;
-            bottom: 8vw;
-            left: 8vw;
+
+            @media (min-width: 701px) {
+                height: 58%;
+            }
+
+            @media (max-width: 700px) {
+                height: 48%;
+            }
+
+            top: -7vw;
+            right: 0;
         }
-
-        .headerLogoHoverAppear {
-            position: absolute;
-            opacity: 0;
-            bottom: 1.05vw;
-            left: 0vw;
-        }
-
-        .headerLogoHover {
-            opacity: 0
-        }
-
-        .headerLogoHoverDis:hover {
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .headerLogoHoverAppear:hover {
-            opacity: 1;
-            transition: opacity 0.3s ease-in-out;
-
-        }
-
     }
 }

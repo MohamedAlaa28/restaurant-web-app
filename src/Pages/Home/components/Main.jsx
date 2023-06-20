@@ -1,9 +1,9 @@
 import React from "react";
-import greekSalad from "../assets/icons/greek salad.jpg";
-import bruchetta from "../assets/icons/bruchetta.svg";
-import lemonDessert from "../assets/icons/lemon dessert.jpg";
+import greekSalad from "../../../assets/icons/greek salad.jpg";
+import bruchetta from "../../../assets/icons/bruchetta.svg";
+import lemonDessert from "../../../assets/icons/lemon dessert.jpg";
 import { MdDeliveryDining } from "react-icons/md";
-import "../assets/css/_Main.scss";
+import "../../../assets/css/_Main.scss";
 
 const cards = [
   {
@@ -37,11 +37,13 @@ const Main = () => {
     <main className="main">
       <section className="titleSection">
         <p className="h1">this weeks specials ! </p>
-        <button>online menu</button>
+        <div>
+          <button>online menu</button>
+        </div>
       </section>
       <section className="cardsSection">
         {cards.map((card) => (
-          <card key={card.id}>
+          <section key={card.id} className="card">
             <img src={card.Image} alt="mainLogo" className="mainLogo"></img>
             <div>
               <p>{card.name}</p>
@@ -51,7 +53,7 @@ const Main = () => {
             <button>
               order a delivery <MdDeliveryDining className="icon" />
             </button>
-          </card>
+          </section>
         ))}
       </section>
     </main>

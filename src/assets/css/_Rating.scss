@@ -1,53 +1,76 @@
+@import './variable/globalVariables';
+
 .rating {
-    padding: 1% 20%;
+    padding: $globalPadding;
     text-transform: capitalize;
-    font-family: 'Karla', sans-serif;
-    
+
     .h1 {
-        font-size: 4.35vw;
+        font-size: var(--h1-font-size);
         white-space: nowrap;
         margin: 0;
         text-align: center;
-        padding: 5% 0;
+        padding-top: 5%;
     }
 
     .ratingSection {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+
+        @media (min-width: 701px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 700px) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+
         grid-gap: 2.5%;
 
-        card {
-            // border-radius: 16px;
+        .card {
             background-color: #EDEFEE;
             padding: 5%;
             display: grid;
-            grid-gap: 2.5%;
-            .stars{
-                color: gold;
-                display: block;
-                width: 10%;
-                height: 10%;
-            }
-            div {
-                display: grid;
-                grid-template-columns: 2fr 1fr;
+            grid-template-rows: 2fr 1fr;
+
+            .stars {
+                color: #F4CE14;
                 white-space: nowrap;
-                grid-gap: 1vw;
+                width: 12.5%;
+                height: 12.5%;
+                padding: 0 20% 10% 20%;
+                // justify-self: left;
+            }
+
+            .profile {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 5%;
+                white-space: nowrap;
+                cursor: pointer;
 
                 img {
-                    width: 5vw;
-                    height: 5vw;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: $radius;
                 }
-                p{
-                    font-size: 1.1vw;
-                    margin-top: 25%;
 
+                p {
+                    font-size: var(--icon-font-size);
+                    justify-self: left;
+                    align-self: center;
                 }
-                
             }
-            .comment{
-                font-size: 1vw;
-                // height: 40%;
+
+            div:hover {
+                p {
+                    color: $green-color;
+                }
+            }
+
+            .comment {
+                font-size: var(--p-font-size);
+                font-family: 'Karla', sans-serif;
+                margin: 0;
             }
         }
     }
