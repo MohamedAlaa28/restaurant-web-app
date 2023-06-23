@@ -1,8 +1,10 @@
 import "./App.css";
-import React from "react";
+import React, { useReducer, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/Home/HomePage";
 import BookingPage from "./Pages/Booking/BookingPage";
+import ConfirmedBooking from "./Pages/Booking/components/ConfirmedBooking";
+
 
 function App() {
   return (
@@ -13,11 +15,11 @@ function App() {
           <Route
             path="/booking"
             element={
-              <section>
-                <BookingPage />
-              </section>
+              <BookingPage
+              />
             }
           />
+          <Route path="/confirm" element={<ConfirmedBooking />} />
         </Routes>
       </BrowserRouter>
     </div>

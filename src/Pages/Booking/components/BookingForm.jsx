@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import bookingLogo from "../../../assets/icons/Tables.jpg";
-import "../../../assets/css/_BookingForm.scss";
+import "../css/_BookingForm.scss";
+import Button from "../../../assets/components/Button";
+import { Link } from "react-router-dom";
 
 const BookingForm = ({
   date,
@@ -16,45 +18,52 @@ const BookingForm = ({
   lastName,
   setLastName,
   handleDateChange,
-  handleSubmit,
+  submitForm,
 }) => {
-  const onSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic
-    handleSubmit()
-    console.log("Date:", date);
-    console.log("Time:", time);
-    console.log("Number of Guests:", guests);
-    console.log("Occasion:", occasion);
-  };
+  const [inputType, setInputType] = useState("text");
 
+  const handleDateFocus = () => {
+    setInputType("date");
+  };
   return (
     <div className="formSection">
       <img src={bookingLogo} alt="bookingLogo" className="bookingLogo"></img>
 
-      <form onSubmit={onSubmit} className="form">
-      <label htmlFor="first-Name">First Name</label>
+      <form onSubmit={(e) => submitForm(e, {firstName, lastName ,date, time, guests, occasion })} className="form">
+        <label htmlFor="first-Name">
+          First Name <sup>*</sup>
+        </label>
         <input
           id="first-Name"
           type="text"
           value={firstName}
+          placeholder="First Name"
           onChange={(e) => setFirstName(e.target.value)}
         />
-        <label htmlFor="last-Name">Last Name</label>
+        <label htmlFor="last-Name">
+          Last Name <sup>*</sup>
+        </label>
         <input
           id="last-Name"
           type="text"
           value={lastName}
+          placeholder="Last Name"
           onChange={(e) => setLastName(e.target.value)}
         />
-        <label htmlFor="res-date">Choose date</label>
+        <label htmlFor="res-date">
+          Choose date <sup>*</sup>
+        </label>
         <input
           id="res-date"
-          type="date"
           value={date}
+          placeholder="Choose date"
+          type={inputType}
+          onFocus={handleDateFocus}
           onChange={(e) => handleDateChange(e)}
         />
-        <label htmlFor="res-time">Choose time</label>
+        <label htmlFor="res-time">
+          Choose time <sup>*</sup>
+        </label>
         <select
           id="res-time"
           value={time}
@@ -66,23 +75,33 @@ const BookingForm = ({
             </option>
           ))}
         </select>
-        <label htmlFor="guests">Number of guests</label>
+        <label htmlFor="guests">
+          Number of guests <sup>*</sup>
+        </label>
         <input
           id="guests"
           type="number"
+          placeholder="Number of Guests"
           value={guests}
           onChange={(e) => setGuests(e.target.value)}
         />
-        <label htmlFor="occasion">Occasion</label>
+        <label htmlFor="occasion">
+          Occasion <sup>*</sup>
+        </label>
         <select
           id="occasion"
+          placeholder="Occasion"
           value={occasion}
           onChange={(e) => setOccasion(e.target.value)}
         >
           <option>Birthday</option>
           <option>Anniversary</option>
-        </select> 
-        <button type="submit">Submit Reservation</button>
+        </select>
+        <Link
+          to="/booking/confirm"
+          state={{ firstName, lastName, date, time, guests, occasion }}
+        ></Link>
+        <Button type="submit" text={"Submit Reservation"} />
       </form>
     </div>
   );

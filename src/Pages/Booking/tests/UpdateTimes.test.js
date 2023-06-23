@@ -1,12 +1,15 @@
+import { fetchAPI } from "../../../utilities/dataAPIs";
 import { updateTimes } from "../BookingPage";
 
 describe("updateTimes", () => {
   it("should update available times", () => {
     const dispatchMock = jest.fn();
-    updateTimes(dispatchMock);
+    const selectedDate = new Date("2023-03-15");
+
+    updateTimes(dispatchMock ,selectedDate);
 
     // Assert that the dispatch function was called with the updated times
-    const updatedTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+    const updatedTimes = fetchAPI(selectedDate);
     expect(dispatchMock).toHaveBeenCalledWith({
       type: "UPDATE_TIMES",
       times: updatedTimes,

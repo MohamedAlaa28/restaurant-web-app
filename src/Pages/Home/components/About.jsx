@@ -1,7 +1,8 @@
 import React from "react";
-import aboutLogo_2 from "../../../assets/icons/restaurant.jpg";
-import aboutLogo_1 from "../../../assets/icons/restaurant_1.jpg";
-import "../../../assets/css/_About.scss";
+import aboutLogo_2 from "../../../assets/icons/food_2.jpg";
+import aboutLogo_1 from "../../../assets/icons/food_1.jpg";
+import "../css/_About.scss";
+
 const About = () => {
   return (
     <article className="about">

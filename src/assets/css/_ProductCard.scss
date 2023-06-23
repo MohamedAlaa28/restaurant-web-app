@@ -1,0 +1,75 @@
+@import './variable/globalVariables';
+
+.productCard {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    background-color: #EDEFEE;
+    display: grid;
+    grid-gap: 0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    img {
+        width: 100%;
+
+        @media (min-width: 701px) {
+            height: 12vw;
+        }
+
+        @media (max-width: 700px) {
+            height: 20vw;
+        }
+
+        object-fit: cover;
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+
+    }
+    div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        white-space: nowrap;
+        padding: 0% 10%;
+        margin: 0;
+        font-weight: bold;
+        font-size: var(--button-font-size);
+
+        .price {
+            color: #EE9972;
+            text-align: right;
+        }
+    }
+
+    .cardDescription {
+        padding: 0% 10%;
+        color: $green-color;
+        font-size: var(--p-font-size);
+        font-family: 'Karla', sans-serif;
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        text-transform: capitalize;
+        font-weight: bold;
+        white-space: nowrap;
+        font-size: var(--p-font-size);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 4%;
+        justify-self: center;
+        align-self: center;
+        padding: 10%;
+        box-shadow: none;
+        background-color: #EDEFEE;
+
+        .icon {
+            font-size: var(--icon-font-size)
+        }
+    }
+
+    button:hover {
+        color: $green-color;
+    }
+}
+.productCard:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
+}

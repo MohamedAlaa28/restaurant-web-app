@@ -2,8 +2,10 @@ import React from "react";
 import greekSalad from "../../../assets/icons/greek salad.jpg";
 import bruchetta from "../../../assets/icons/bruchetta.svg";
 import lemonDessert from "../../../assets/icons/lemon dessert.jpg";
-import { MdDeliveryDining } from "react-icons/md";
-import "../../../assets/css/_Main.scss";
+import "../css/_Products.scss";
+import ProductCard from "../../../assets/components/ProductCard";
+import { Link } from "react-router-dom";
+import Button from "../../../assets/components/Button";
 
 const cards = [
   {
@@ -32,32 +34,30 @@ const cards = [
   },
 ];
 
-const Main = () => {
+const Products = () => {
   return (
-    <main className="main">
+    <div className="main">
       <section className="titleSection">
-        <p className="h1">this weeks specials ! </p>
+        <p className="h1">this weeks specials !</p>
         <div>
-          <button>online menu</button>
+          <Link to={"./menu"}>
+            <Button text={"online menu"} />
+          </Link>
         </div>
       </section>
       <section className="cardsSection">
         {cards.map((card) => (
-          <section key={card.id} className="card">
-            <img src={card.Image} alt="mainLogo" className="mainLogo"></img>
-            <div>
-              <p>{card.name}</p>
-              <p className="price">{card.price}</p>
-            </div>
-            <p className="cardDescription">{card.description}</p>
-            <button>
-              order a delivery <MdDeliveryDining className="icon" />
-            </button>
-          </section>
+          <ProductCard
+            key={card.id}
+            image={card.Image}
+            name={card.name}
+            price={card.price}
+            description={card.description}
+          />
         ))}
       </section>
-    </main>
+    </div>
   );
 };
 
-export default Main;
+export default Products;

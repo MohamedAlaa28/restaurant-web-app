@@ -1,6 +1,6 @@
-@import '../variable/globalVariables';
+@import './variable/globalVariables';
 
-@mixin button {
+ button {
     text-transform: capitalize;
     white-space: nowrap;
     font-weight: bold;
@@ -11,10 +11,16 @@
     cursor: pointer;
     margin: 1vw 0;
     padding: 3%;
+    justify-self: center;
     background-color: #F4CE14;
     border-radius: 1vw;
     -webkit-border-radius: 1vw;
     -moz-border-radius: 1vw;
     -ms-border-radius: 1vw;
     -o-border-radius: 1vw;
+    box-shadow: rgba(244, 206, 20, 0.1) 0px 6px 24px 0px, rgba(244, 206, 20, 0.15) 0px 0px 0px 1px;
+}
+button:hover {
+    color: #495E57;
+    box-shadow: rgba(244, 206, 20, 0.25) 0px 6px 24px 0px, rgba(244, 206, 20, 0.35) 0px 0px 0px 1px;
 }

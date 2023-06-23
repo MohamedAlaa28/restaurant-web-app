@@ -1,7 +1,3 @@
-@use './mixin/button' as *;
-@use './mixin/image' as *;
-
-
 .header {
     margin-bottom: 10%;
 }
@@ -25,8 +21,8 @@
     }
 
     .headerLogo {
-        @include image();
-
+        // box-shadow: rgba(244, 206, 20, 0.1) 0px 6px 24px 0px, rgba(244, 206, 20, 0.15) 0px 0px 0px 1px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
         @media (min-width: 701px) {
             margin: 15% 0 0 35%;
         }
@@ -37,6 +33,8 @@
             justify-self: center;
         }
 
+        width: 65%;
+        border-radius: 16px;
     }
 
     section {
@@ -64,14 +62,6 @@
             font-size: var(--p-font-size);
             line-height: 1.5;
             padding-top: 5%;
-        }
-
-        button {
-            @include button();
-        }
-
-        button:hover {
-            color: #495E57;
         }
     }
 }

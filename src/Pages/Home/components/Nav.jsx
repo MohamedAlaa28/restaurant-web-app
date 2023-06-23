@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../../assets/icons/littlelemon_logo.png";
-import "../../../assets/css/_Nav.scss";
+import "../css/_Nav.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
