@@ -1,24 +1,19 @@
 import React from "react";
 import "../css/_ConfirmedBooking.scss";
-import confirmLogo from "../../../assets/icons/confirm.jpg";
+import confirmLogo from "../../../assets/images/confirm.jpg";
 import { useLocation } from "react-router-dom";
-
-const ConfirmdBooking = () => {
+const ConfirmedBooking = () => {
   const location = useLocation();
   const { firstName, lastName, date, time, guests, occasion } =
     location.state || {};
 
   return (
+
     <div className="Confirmation">
       <p>Booking Details</p>
       <section>
+        <img src={confirmLogo} alt="confirmLogo" className="confirmLogo"></img>
         <table className="booking-table">
-          {/* <thead>
-            <tr>
-              <th>Details</th>
-              <th>Information</th>
-            </tr>
-          </thead> */}
           <tbody>
             <tr>
               <td>First Name :</td>
@@ -46,14 +41,9 @@ const ConfirmdBooking = () => {
             </tr>
           </tbody>
         </table>
-        <img
-          src={confirmLogo}
-          alt="confirmLogo"
-          className="confirmLogo"
-        ></img>
       </section>
     </div>
   );
 };
 
-export default ConfirmdBooking;
+export default ConfirmedBooking;

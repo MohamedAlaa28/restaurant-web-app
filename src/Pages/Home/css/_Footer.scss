@@ -1,9 +1,10 @@
-@import '../../../assets/css/variable/globalVariables';
+$radius : 16px;
+$globalPadding : 0 20%;
 
 .footer {
     padding: $globalPadding;
+    margin-bottom: 2.5%;
     display: grid;
-
     @media (min-width: 701px) {
         grid-template-columns: 1fr 3fr;
     }
@@ -53,7 +54,6 @@
                 a {
                     text-decoration: none;
                     color: black;
-                    // font-size: 1vw;
                     font-size: var(--p-font-size);
                     display: list-item;
                     margin-left: 10%;

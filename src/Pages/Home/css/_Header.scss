@@ -1,13 +1,20 @@
+$radius : 16px;
+$globalPadding : 0 20%;
+
 .header {
-    margin-bottom: 10%;
+    margin-bottom: 8.75%;
+}
+
+#about {
+    margin: 2.5% 0;
 }
 
 .header,
-.about {
+#about {
     background-color: #495E57;
     color: white;
     display: grid;
-    padding: 0 20%;
+    padding: $globalPadding;
     position: relative;
 
     @media (min-width: 701px) {
@@ -21,8 +28,8 @@
     }
 
     .headerLogo {
-        // box-shadow: rgba(244, 206, 20, 0.1) 0px 6px 24px 0px, rgba(244, 206, 20, 0.15) 0px 0px 0px 1px;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
+
         @media (min-width: 701px) {
             margin: 15% 0 0 35%;
         }
@@ -34,7 +41,11 @@
         }
 
         width: 65%;
-        border-radius: 16px;
+        border-radius:$radius;
+        -webkit-border-radius:$radius;
+        -moz-border-radius:$radius;
+        -ms-border-radius:$radius;
+        -o-border-radius:$radius;
     }
 
     section {

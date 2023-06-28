@@ -1,7 +1,7 @@
 import React from "react";
-import greekSalad from "../../../assets/icons/greek salad.jpg";
-import bruchetta from "../../../assets/icons/bruchetta.svg";
-import lemonDessert from "../../../assets/icons/lemon dessert.jpg";
+import greekSalad from "../../../assets/images/greek salad-min.jpg";
+import bruchetta from "../../../assets/images/bruchetta.jpg";
+import lemonDessert from "../../../assets/images/lemon dessert.jpg";
 import "../css/_Products.scss";
 import ProductCard from "../../../assets/components/ProductCard";
 import { Link } from "react-router-dom";
@@ -45,6 +45,15 @@ const Products = () => {
           </Link>
         </div>
       </section>
+      {/* <section className="buttonsSection">
+        <p></p>
+        <div>
+          <Button text={"deserts"} />
+          <Button text={"meals"} />
+          <Button text={"drinks"} />
+        </div>
+        <p></p>
+      </section> */}
       <section className="cardsSection">
         {cards.map((card) => (
           <ProductCard

@@ -1,6 +1,14 @@
-@import '../../../assets/css/variable/globalVariables';
+$radius : 16px;
+$globalPadding : 0 20%;
+
+.booking-header {
+    font-size: var(--h1-font-size);
+    margin: auto;
+    text-align: center;
+}
 
 .Confirmation {
+    font-size: var(--form-font-size);
     p {
         text-align: center;
         font-size: var(--h1-font-size);
@@ -9,12 +17,22 @@
 
     section {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+
+        @media (min-width: 701px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 700px) {
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 2.5%;
+        }
+
         grid-gap: 2.5%;
         margin: $globalPadding;
         background-color: #EDEFEE;
         border-radius: $radius;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
         .confirmLogo {
             box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
@@ -27,79 +45,34 @@
             -o-border-radius: $radius;
         }
 
-
-
         .booking-table {
             border-collapse: collapse;
             white-space: nowrap;
             border-radius: $radius;
-            font-size: var(--button-font-size);
+            font-family: 'Karla', sans-serif;
             width: 80%;
             margin: 0px auto;
-            // thead {
-            //     tr {
-            //         background-color: rgba(73, 94, 87, 0.5);
-
-            //         th:nth-child(1) {
-            //             border-top-left-radius: $radius;
-            //         }
-
-            //         th:nth-child(2) {
-            //             border-top-right-radius: $radius;
-            //         }
-            //     }
-            // }
 
             tbody {
                 tr {
-                    border-top: 1px solid $green-color;
+                    border-top: 1px solid #495E57;
+
+                    td:nth-of-type(1) {
+                        padding: 5%;
+                        text-align: left;
+                    }
+
+                    td:nth-of-type(2) {
+                        text-align: center;
+                    }
+
+                    td:first-child {
+                        font-weight: bold;
+                    }
                 }
 
-                tr:nth-last-of-type(6) {
+                tr:nth-of-type(1) {
                     border-top: none;
-                }
-
-                // tr:hover {
-                //     background-color: rgba(73, 94, 87, 0.5);
-                // }
-
-                // tr:nth-child(6) {
-                //     td:nth-child(1) {
-                //         border-bottom-left-radius: $radius;
-                //     }
-
-                //     td:nth-child(2) {
-                //         border-bottom-right-radius: $radius;
-                //     }
-                // }
-
-                // tr:nth-child(1) {
-                //     td:nth-child(1) {
-                //         border-top-left-radius: $radius;
-                //     }
-
-                //     td:nth-child(2) {
-                //         border-top-right-radius: $radius;
-                //     }
-                // }
-
-            }
-
-            tr {
-
-                td:nth-child(2),
-                th:nth-child(2) {
-                    text-align: center;
-                }
-
-                th,
-                td {
-                    padding: 5%;
-                    text-align: left;
-                }
-
-                td:first-child {
-                    font-weight: bold;
                 }
             }
         }

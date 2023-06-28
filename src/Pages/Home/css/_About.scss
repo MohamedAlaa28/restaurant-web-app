@@ -1,29 +1,47 @@
 @use './_Header';
 
-.about {
-    margin-top: 5%;
+#about {
 
     .imagesSection {
         position: relative;
 
         img {
-            // box-shadow: rgba(244, 206, 20, 0.1) 0px 6px 24px 0px, rgba(244, 206, 20, 0.15) 0px 0px 0px 1px;
+
             box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
-            width: 55%;
-            @media (min-width: 701px) {
+            width: 80%;
+            transition: transform 0.3s ease;
+        }
+
+        @media (min-width: 701px) {
+            img {
+                position: absolute;
+                z-index: 1;
                 margin: 15% 0 0 5%;
             }
 
-            @media (max-width: 700px) {
-                margin: 15% 5% 0 0;
+            .headerLogoOverOne {
+                left: -0.45vw;
+                bottom: -0.6vw;
             }
 
+            .headerLogoOverTwo {
+                top: -5vw;
+                right: 0vw;
+                position: absolute;
+            }
         }
 
-        .headerLogoOver {
-            position: absolute;
-            top: -3.5vw;
-            right: 0;
+        @media (max-width: 700px) {
+            img {
+                margin: 35% 5% 0 0;
+            }
+
+            .headerLogoOverTwo {
+                top: -20vw;
+                right: 0vw;
+                position: absolute;
+            }
         }
+
     }
 }

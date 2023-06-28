@@ -1,4 +1,5 @@
-@import '../../../assets/css/variable/globalVariables';
+$radius : 16px;
+$globalPadding : 0 20%;
 
 .main {
     padding: $globalPadding;
@@ -37,9 +38,22 @@
         }
     }
 
+    .buttonsSection {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+
+        div {
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            Button{
+                margin-left: 8%;
+            }
+        }
+    }
+
     .cardsSection {
         display: grid;
-        grid-gap: 5%;
+        grid-gap: 3.33%;
 
         @media (min-width: 701px) {
             grid-template-columns: 1fr 1fr 1fr;

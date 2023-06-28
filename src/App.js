@@ -1,5 +1,5 @@
-import "./App.css";
-import React, { useReducer, useState } from "react";
+import "./App.scss";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/Home/HomePage";
 import BookingPage from "./Pages/Booking/BookingPage";
