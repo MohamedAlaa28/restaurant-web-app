@@ -1,11 +1,12 @@
 $radius : 16px;
-$globalPadding : 0 20%;
+$globalPadding : 0 15%;
 
 
 .formSection {
     font-size: var(--form-font-size);
     margin: $globalPadding;
     display: grid;
+    margin-bottom: 1%;
     @media (min-width: 701px) {
         grid-template-columns: 1fr 1fr;
     }

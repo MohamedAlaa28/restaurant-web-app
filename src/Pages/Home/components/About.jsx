@@ -1,14 +1,15 @@
 import React from "react";
-import aboutLogo_2 from "../../../assets/images/Mario and Adrian a-min.jpg";
-import aboutLogo_1 from "../../../assets/images/Mario and Adrian b-min.jpg";
+import aboutLogo_2 from "../../../assets/images/compressed/Mario and Adrian a-min.jpg";
+import aboutLogo_1 from "../../../assets/images/compressed/Mario and Adrian b-min.jpg";
 import "../css/_About.scss";
+import LazyLoad from "react-lazyload";
 
 const About = () => {
   return (
-    <article id="about">
-      <section className="textSection">
+    <section id="about">
+      <article className="textSection">
         <p className="h1">little lemon</p>
-        <p className="h3">chicago</p>
+        <p className="h3">egypt</p>
         <p className="p">
           Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
           sint. Velit officia consequat duis enim velit mollit. Exercitation
@@ -16,18 +17,24 @@ const About = () => {
           ullamco est sit aliqua dolor do amet sint. Velit officia consequat
           duis enim velit mollit.
         </p>
-        {/* <button>reserve table</button> */}
-      </section>
+      </article>
       <section className="imagesSection">
-        <img src={aboutLogo_1} alt="aboutLogo_1" className="headerLogoOverOne headerLogo"></img>
-
-        <img
-          src={aboutLogo_2}
-          alt="aboutLogo_2"
-          className="headerLogoOverTwo headerLogo"
-        ></img>
+        <LazyLoad>
+          <img
+            src={aboutLogo_1}
+            alt="aboutLogo_1"
+            className="headerLogoOverOne headerLogo"
+          />
+        </LazyLoad>
+        <LazyLoad>
+          <img
+            src={aboutLogo_2}
+            alt="aboutLogo_2"
+            className="headerLogoOverTwo headerLogo"
+          />
+        </LazyLoad>
       </section>
-    </article>
+    </section>
   );
 };
 

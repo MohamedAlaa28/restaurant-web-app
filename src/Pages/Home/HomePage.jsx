@@ -7,6 +7,20 @@ import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 
 const HomePage = () => {
+  // const [isLoading, setIsLoading] = useState(true);
+  // const handlePageLoad = () => {
+  //   setIsLoading(false);
+  // };
+
+  // useEffect(() => {
+  //   handlePageLoad(); // Immediately set isLoading to false on component mount
+
+  //   // Cleanup function to set isLoading to true when the component unmounts
+  //   return () => {
+  //     setIsLoading(true);
+  //   };
+  // }, []);
+
   return (
     <div>
       <Nav />

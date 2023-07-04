@@ -1,10 +1,11 @@
 $radius : 16px;
-$globalPadding : 0 20%;
+$globalPadding : 0 15%;
 
 .footer {
     padding: $globalPadding;
     margin-bottom: 2.5%;
     display: grid;
+
     @media (min-width: 701px) {
         grid-template-columns: 1fr 3fr;
     }
@@ -14,16 +15,14 @@ $globalPadding : 0 20%;
     }
 
     .footerLogo {
-        width: 60%;
-        height: 100%;
-
+        width: 45%;
         @media (max-width: 700px) {
-            height: 60%;
+            width: 65%;
             align-self: center;
         }
     }
 
-    div {
+    section {
         margin: 0;
         display: grid;
 

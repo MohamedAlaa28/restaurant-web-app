@@ -1,5 +1,5 @@
 import React from "react";
-import bookingLogo from "../../../assets/images/Tables.jpg";
+import bookingLogo from "../../../assets/images/compressed/Tables.jpg";
 import "../css/_BookingForm.scss";
 import Button from "../../../assets/components/Button";
 
@@ -20,6 +20,24 @@ export const validateGuestsFunction = (e) => {
   return isValid;
 };
 
+export const alertNameFunction = (e) => {
+  if (e.target.value.trim() === "") {
+    return <p>you have to enter your name</p>;
+  } else if (/\d/.test(e.target.value)) {
+    return <p>the name can't have a number</p>;
+  }
+};
+
+export const alertGuestsFunction = (e) => {
+  if (e.target.value.trim() === "") {
+    return <p>you have to enter number of guests</p>;
+  }else if (e.target.value < 1) {
+    return <p>we can't reserve for no one</p>;
+  } else if (e.target.value > 25) {
+    return <p>maximum number is 25</p>;
+  }
+};
+
 const BookingForm = ({
   firstName,
   lastName,
@@ -33,6 +51,9 @@ const BookingForm = ({
   guestsValid,
   firstNameIsTouched,
   lastNameIsTouched,
+  firstNameAlert,
+  lastNameAlert,
+  guestsAlert,
   dateIsTouched,
   guestsIsTouched,
   setFirstName,
@@ -58,13 +79,15 @@ const BookingForm = ({
       }
     };
 
-    const handleChange = (setState, validateFunction) => (e) => {
+    const handleChange = (setState, validateFunction, alertFunction) => (e) => {
       const isValid = validateFunction(e);
+      const alert = alertFunction(e);
       setState((prevState) => ({
         ...prevState,
         value: e.target.value,
         isTouched: true,
         valid: isValid,
+        alert: alert,
       }));
     };
 
@@ -91,38 +114,42 @@ const BookingForm = ({
               First Name <sup>*</sup>
             </label>
             <input
-          id="first-Name"
-          type="text"
-          value={firstName}
-          placeholder="First Name"
-          minLength="3"
-          maxLength="10"
-          onChange={handleChange(setFirstName, validateNameFunction)}
-          required
-        />
+              id="first-Name"
+              type="text"
+              value={firstName}
+              placeholder="First Name"
+              minLength="3"
+              maxLength="10"
+              onChange={handleChange(
+                setFirstName,
+                validateNameFunction,
+                alertNameFunction
+              )}
+              required
+            />
             {!firstNameValid && firstNameIsTouched && (
-              <span className="error-message">
-                Please enter a valid first name
-              </span>
+              <span className="error-message">{firstNameAlert}</span>
             )}
 
             <label htmlFor="last-Name">
               Last Name <sup>*</sup>
             </label>
             <input
-          id="last-Name"
-          type="text"
-          value={lastName}
-          placeholder="Last Name"
-          minLength="3"
-          maxLength="10"
-          onChange={handleChange(setLastName, validateNameFunction)}
-          required
-        />
+              id="last-Name"
+              type="text"
+              value={lastName}
+              placeholder="Last Name"
+              minLength="3"
+              maxLength="10"
+              onChange={handleChange(
+                setLastName,
+                validateNameFunction,
+                alertNameFunction
+              )}
+              required
+            />
             {!lastNameValid && lastNameIsTouched && (
-              <span className="error-message">
-                Please enter a valid last name
-              </span>
+              <span className="error-message">{lastNameAlert}</span>
             )}
 
             <label htmlFor="res-date">
@@ -137,18 +164,20 @@ const BookingForm = ({
               required
             />
             {!dateValid && dateIsTouched && (
-              <span className="error-message">Please enter a valid date</span>
+              <span className="error-message">
+                Please enter a future valid date
+              </span>
             )}
 
             <label htmlFor="res-time">
               Choose time <sup>*</sup>
             </label>
             <select
-          id="res-time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-          required
-        >
+              id="res-time"
+              value={time}
+              onChange={(e) => setTime(e.target.value)}
+              required
+            >
               <option value="">--Choose time--</option>
               {availableTimes &&
                 availableTimes.map((time) => (
@@ -162,31 +191,35 @@ const BookingForm = ({
               Number of guests <sup>*</sup>
             </label>
             <input
-          id="guests"
-          type="number"
-          placeholder="Number of Guests"
-          min="1"
-          max="25"
-          value={guests}
-          onChange={handleChange(setGuests, validateGuestsFunction)}
-          onKeyDown={(evt) => {
-            const isValidKey =
-              (evt.key >= "0" && evt.key <= "9") ||
-              evt.key === "Backspace" ||
-              evt.key === "Delete" ||
-              evt.key === "ArrowLeft" ||
-              evt.key === "ArrowRight" ||
-              evt.key === "Tab" ||
-              evt.key === "Enter";
-            if (!isValidKey) {
-              evt.preventDefault();
-            }
-          }}
-          required
-        />
+              id="guests"
+              type="number"
+              placeholder="Number of Guests"
+              min="1"
+              max="25"
+              value={guests}
+              onChange={handleChange(
+                setGuests,
+                validateGuestsFunction,
+                alertGuestsFunction
+              )}
+              onKeyDown={(evt) => {
+                const isValidKey =
+                  (evt.key >= "0" && evt.key <= "9") ||
+                  evt.key === "Backspace" ||
+                  evt.key === "Delete" ||
+                  evt.key === "ArrowLeft" ||
+                  evt.key === "ArrowRight" ||
+                  evt.key === "Tab" ||
+                  evt.key === "Enter";
+                if (!isValidKey) {
+                  evt.preventDefault();
+                }
+              }}
+              required
+            />
             {!guestsValid && guestsIsTouched && (
               <span className="error-message">
-                Please enter a valid number of guests
+                {guestsAlert}
               </span>
             )}
 

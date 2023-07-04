@@ -78,6 +78,9 @@ const BookingPage = () => {
         guestsValid={guests.valid}
         firstNameIsTouched={firstName.isTouched}
         lastNameIsTouched={lastName.isTouched}
+        firstNameAlert={firstName.alert}
+        guestsAlert={guests.alert}
+        lastNameAlert={lastName.alert}
         dateIsTouched={date.isTouched}
         guestsIsTouched={guests.isTouched}
         setFirstName={setFirstName}

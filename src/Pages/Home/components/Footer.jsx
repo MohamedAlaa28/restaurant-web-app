@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <img src={footerLogo} alt="footerLogo" className="footerLogo"></img>
-      <div>
+      <section>
       <ul>
         <li className="listOne">
           <p>document navigation</p>
@@ -35,7 +35,7 @@ const Footer = () => {
           <Link to="/">email</Link>
         </li>
       </ul>
-      </div>
+      </section>
     </footer>
   );
 };

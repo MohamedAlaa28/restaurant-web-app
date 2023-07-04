@@ -1,12 +1,15 @@
 import React from "react";
 import { MdDeliveryDining } from "react-icons/md";
 import "../css/_ProductCard.scss";
+import LazyLoad from "react-lazyload";
 
 const ProductCard = ({ image, name, price, description }) => {
   return (
     <div className="productCard">
       <header>
-        <img src={image} alt="mainLogo" className="mainLogo"></img>
+        <LazyLoad>
+          <img src={image} alt="mainLogo" className="mainLogo"></img>
+        </LazyLoad>
       </header>
       <article>
         <div>
@@ -14,7 +17,7 @@ const ProductCard = ({ image, name, price, description }) => {
           <p className="price">{price}</p>
         </div>
         <p className="cardDescription">{description}</p>
-        <button>
+        <button aria-label="On Click">
           order a delivery <MdDeliveryDining className="icon" />
         </button>
       </article>

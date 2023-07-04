@@ -1,30 +1,19 @@
-$radius : 16px;
-$globalPadding : 0 20%;
+$radius: 16px;
+$globalPadding: 0 15%;
 
 .rating {
     padding: $globalPadding;
     text-transform: capitalize;
     margin: 2.5% 0;
+
+    @media (max-width: 700px) {
+        margin-bottom: 10%;
+    }
+
     .h1 {
         font-size: var(--h1-font-size);
         white-space: nowrap;
         margin: 0;
-        text-align: center;
-    }
-
-    .ratingSection {
-        display: grid;
-
-        @media (min-width: 701px) {
-            grid-template-columns: repeat(4, 1fr);
-        }
-
-        @media (max-width: 700px) {
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-        }
-
-        grid-gap: 2.5%;
     }
 
 }

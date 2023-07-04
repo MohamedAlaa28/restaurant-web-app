@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/_ConfirmedBooking.scss";
-import confirmLogo from "../../../assets/images/confirm.jpg";
+import confirmLogo from "../../../assets/images/compressed/confirm.jpg";
 import { useLocation } from "react-router-dom";
 const ConfirmedBooking = () => {
   const location = useLocation();
