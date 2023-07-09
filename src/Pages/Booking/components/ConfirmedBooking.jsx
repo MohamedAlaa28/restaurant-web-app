@@ -12,7 +12,7 @@ const ConfirmedBooking = () => {
     <div className="Confirmation">
       <p>Booking Details</p>
       <section>
-        <img src={confirmLogo} alt="confirmLogo" className="confirmLogo"></img>
+        <img src={confirmLogo} alt="confirmLogo"></img>
         <table className="booking-table">
           <tbody>
             <tr>

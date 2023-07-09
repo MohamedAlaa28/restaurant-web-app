@@ -1,12 +1,12 @@
 $radius : 16px;
 
-.cardsSection {
+.cards-section {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow-x: hidden;
-
+    padding: 0 2%;
     .cards {
         display: flex;
         gap: 2%;
@@ -14,7 +14,7 @@ $radius : 16px;
         overflow-x: scroll;
         scroll-behavior: smooth;
 
-        .productCard {
+        .product-card {
             flex: 0 0 29%;
 
             @media (max-width: 700px) {
@@ -24,8 +24,8 @@ $radius : 16px;
         }
     }
 
-    .prevButton,
-    .nextButton {
+    .prev-button,
+    .next-button {
         background-color: #495e57;
         color: white;
         padding: 1.5%;
@@ -34,19 +34,21 @@ $radius : 16px;
         display: flex;
         position: absolute;
         cursor: pointer;
-        transition: color 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        opacity: 0.8;
     }
 
-    .prevButton:hover,
-    .nextButton:hover {
+    .prev-button:hover,
+    .next-button:hover {
         color: #F4CE14;
+        opacity: 1;
     }
 
-    .prevButton {
+    .prev-button {
         left: 0;
     }
 
-    .nextButton {
+    .next-button {
         right: 0;
     }
 

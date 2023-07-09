@@ -76,7 +76,7 @@ const cards = [
 const Products = () => {
   return (
     <main className="main">
-      <section className="titleSection">
+      <section className="title-section">
         <p className="h1">this week's specials!</p>
         <div>
           <Link to={"./menu"}>

@@ -1,0 +1,102 @@
+$radius: 16px;
+$globalPadding : 0 15%;
+
+.booking-header {
+    font-size: var(--h1-font-size);
+    color: #f4ce14;
+    margin: 0;
+    display: flex;
+    background-color: #495E57;
+    justify-content: center;
+}
+
+.from-sub-section {
+    color: white;
+    align-items: center;
+    // padding-right: 5%;
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+    background-color: #495E57;
+    border-radius: $radius;
+    padding: 0 5%;
+    .form {
+        font-family: 'Karla', sans-serif;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5%;
+        margin: 0;
+
+        .form-column {
+            display: grid;
+            grid-gap: 25%;
+        }
+
+        label {
+            font-size: var(--p-font-size);
+        }
+
+        .radio-section {
+            display: flex;
+            gap: 25%;
+
+            input[type="radio"] {
+                appearance: none;
+                display: inline-block;
+                width: 1vw;
+                height: 1vw;
+                border-radius: 50%;
+                outline: none;
+                cursor: pointer;
+                background-color: transparent;
+                box-shadow: 0 0 0 2px #EDEFEE;
+                border: 4px solid #495E57;
+            }
+
+            input[type="radio"]:checked {
+                background-color: #EDEFEE !important;
+                background-clip: content-box;
+            }
+        }
+
+        .error-message {
+            color: red;
+            margin: 0;
+        }
+    }
+
+    Button {
+        display: flex;
+        justify-content: center;
+        background-color: #EDEFEE;
+        box-shadow: inset -0.25em 0em lightgrey;
+        color: #495E57;
+    }
+
+    Button:hover {
+        background-color: lightgrey;
+        box-shadow: inset -0.25em 0em #EDEFEE;
+    }
+
+    .custom-input {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5%;
+        width: 100%;
+        white-space: nowrap;
+    }
+}
+
+.form-section {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    margin: 0 15% 1% 15%;
+    // gap: 2.5%;
+
+    img {
+        width: 100%;
+        border-radius: $radius;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
+    }
+}

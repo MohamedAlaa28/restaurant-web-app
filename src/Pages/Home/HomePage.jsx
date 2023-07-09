@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./components/Header";
-import Nav from "./components/Nav";
 import Products from "./components/Products";
 import Footer from "./components/Footer";
 import About from "./components/About";
@@ -23,7 +22,6 @@ const HomePage = () => {
 
   return (
     <div>
-      <Nav />
       <Header />
       <Products />
       <Testimonials />

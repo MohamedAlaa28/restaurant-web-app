@@ -17,12 +17,12 @@ const Header = () => {
             recipes served with a modern twist.
           </p>
           <Link to={"/booking"}>
-            <Button text={"reserve table"} />
+            <Button text={<>reserve <span> a</span> table</>} />
           </Link>
         </article>
         <LazyLoad>
           {/* <div className="logoContainer"> */}
-          <img src={headerLogo} alt="headerLogo" className="headerLogo"></img>
+          <img src={headerLogo} alt="header-logo" className="header-logo"></img>
           {/* </div> */}
         </LazyLoad>
       </header>

@@ -14,7 +14,7 @@ $globalPadding : 0 15%;
         grid-template-columns: 1fr 1fr;
     }
 
-    .footerLogo {
+    img {
         width: 45%;
         @media (max-width: 700px) {
             width: 65%;

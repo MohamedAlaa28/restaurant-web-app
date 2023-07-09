@@ -12,6 +12,7 @@ $globalPadding : 0 15%;
 .header,
 #about {
     background-color: #495E57;
+    // background-image: url("../../../../public/little-lemon-logo.ico");
     color: white;
     display: grid;
     padding: $globalPadding;
@@ -27,7 +28,7 @@ $globalPadding : 0 15%;
         height: 100vw;
     }
 
-    .headerLogo {
+    .header-logo {
 
         box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
 
@@ -47,7 +48,7 @@ $globalPadding : 0 15%;
 
     article {
         line-height: 0.75;
-
+       
         @media (max-width: 700px) {
             justify-self: center;
             padding: 0;

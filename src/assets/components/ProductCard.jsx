@@ -5,10 +5,10 @@ import LazyLoad from "react-lazyload";
 
 const ProductCard = ({ image, name, price, description }) => {
   return (
-    <div className="productCard">
+    <div className="product-card">
       <header>
         <LazyLoad>
-          <img src={image} alt="mainLogo" className="mainLogo"></img>
+          <img src={image} alt="mainLogo"></img>
         </LazyLoad>
       </header>
       <article>
@@ -16,9 +16,10 @@ const ProductCard = ({ image, name, price, description }) => {
           <p>{name}</p>
           <p className="price">{price}</p>
         </div>
-        <p className="cardDescription">{description}</p>
+        <p className="card-description">{description}</p>
         <button aria-label="On Click">
-          order a delivery <MdDeliveryDining className="icon" />
+          Order a Delivery &nbsp;
+          <MdDeliveryDining className="icon" />
         </button>
       </article>
     </div>

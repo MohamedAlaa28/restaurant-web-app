@@ -17,7 +17,7 @@ const SearchBar = () => {
   };
 
   return (
-    <form className="searchForm" onSubmit={handleSearchSubmit}>
+    <form className="search-form" onSubmit={handleSearchSubmit}>
       <input
         type="text"
         value={searchValue}
@@ -25,11 +25,11 @@ const SearchBar = () => {
         onFocus={() => setInputFocused(true)}
         onBlur={() => setInputFocused(false)}
         placeholder="Search"
-        className="searchInput"
+        className="search-input"
       />
       <button
         type="submit"
-        className={`searchButton ${inputFocused ? "focused" : ""}`}
+        className={`search-button ${inputFocused ? "focused" : ""}`}
       >
         <BiSearch />
       </button>

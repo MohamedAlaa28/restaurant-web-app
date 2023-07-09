@@ -19,8 +19,8 @@ const SliderSection = ({ type, cardsData, Card }) => {
   };
 
   return (
-    <section className="cardsSection">
-      <button className="prevButton" onClick={scrollLeft}>
+    <section className="cards-section">
+      <button className="prev-button" onClick={scrollLeft}>
         <FaArrowLeft />
       </button>
 
@@ -28,7 +28,7 @@ const SliderSection = ({ type, cardsData, Card }) => {
         {type === "product"
           ? cardsData.map((cardData) => (
               <Card
-                className="productCard"
+                className="product-card"
                 key={cardData.id}
                 image={cardData.Image}
                 name={cardData.name}
@@ -38,7 +38,7 @@ const SliderSection = ({ type, cardsData, Card }) => {
             ))
           : cardsData.map((cardData) => (
               <Card
-                className="productCard"
+                className="product-card"
                 key={cardData.id}
                 rate={cardData.rateValue}
                 image={cardData.Image}
@@ -47,7 +47,7 @@ const SliderSection = ({ type, cardsData, Card }) => {
               />
             ))}
       </div>
-      <button className="nextButton" onClick={scrollRight}>
+      <button className="next-button" onClick={scrollRight}>
         <FaArrowRight />
       </button>
     </section>

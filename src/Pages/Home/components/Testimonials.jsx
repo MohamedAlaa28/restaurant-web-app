@@ -1,9 +1,9 @@
 import React from "react";
 import profile_1 from "../../../assets/images/300-1.jpg";
-import profile_2 from "../../../assets/images/300-2.jpg";
-import profile_3 from "../../../assets/images/300-3.jpg";
-import profile_4 from "../../../assets/images/300-4.jpg";
-import profile_5 from "../../../assets/images/300-5.jpg";
+import profile_2 from "../../../assets/images/300-7.jpg";
+import profile_3 from "../../../assets/images/300-6.jpg";
+import profile_4 from "../../../assets/images/300-5.jpg";
+import profile_5 from "../../../assets/images/300-2.jpg";
 import TestimonialCard from "../../../assets/components/TestimonialCard";
 import SliderSection from "../../../assets/components/SliderSection";
 import "../css/_Testimonials.scss";
@@ -54,7 +54,7 @@ const cards = [
 const Testimonials = () => {
 
   return (
-    <section className="rating">
+    <section className="testimonials">
       <p className="h1">testimonials</p>
       <SliderSection type="testimonials" cardsData={cards} Card={TestimonialCard}/>
     </section>

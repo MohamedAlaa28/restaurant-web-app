@@ -1,8 +1,8 @@
-.searchForm {
+.search-form {
     white-space: nowrap;
     display: flex;
 
-    .searchInput {
+    .search-input {
         padding: 3%;
         border-top-left-radius: 16px;
         border-bottom-left-radius: 16px;
@@ -17,7 +17,7 @@
         }
     }
 
-    .searchButton {
+    .search-button {
         padding: 3%;
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;

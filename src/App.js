@@ -5,17 +5,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BookingPage from "./Pages/Booking/BookingPage";
 import ConfirmedBooking from "./Pages/Booking/components/ConfirmedBooking";
 import LoadingSpinner from "./assets/components/LoadingSpinner";
+import NavBar from "./assets/components/NavBar";
 const HomePage = React.lazy(() => import("./Pages/Home/HomePage"));
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route
             path="/"
             element={
-              <React.Suspense fallback={<LoadingSpinner/>}>
+              <React.Suspense fallback={<LoadingSpinner />}>
                 <HomePage />
               </React.Suspense>
             }

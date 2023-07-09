@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="footer">
-      <img src={footerLogo} alt="footerLogo" className="footerLogo"></img>
+      <img src={footerLogo} alt="footer-logo" className="footer-logo"></img>
       <section>
       <ul>
-        <li className="listOne">
+        <li>
           <p>document navigation</p>
           <Link to="/">home</Link>
           <Link to="/">about</Link>
@@ -20,7 +20,7 @@ const Footer = () => {
         </li>
       </ul>
       <ul>
-        <li className="lisTwo">
+        <li>
           <p>contact</p>
           <Link to="/">address</Link>
           <Link to="/">phone number</Link>
@@ -28,7 +28,7 @@ const Footer = () => {
         </li>
       </ul>
       <ul>
-        <li className="lisThree">
+        <li>
           <p>social media links</p>
           <Link to="/">address</Link>
           <Link to="/">phone number</Link>

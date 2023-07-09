@@ -7,7 +7,7 @@ import LazyLoad from "react-lazyload";
 const About = () => {
   return (
     <section id="about">
-      <article className="textSection">
+      <article className="text-section">
         <p className="h1">little lemon</p>
         <p className="h3">egypt</p>
         <p className="p">
@@ -18,19 +18,19 @@ const About = () => {
           duis enim velit mollit.
         </p>
       </article>
-      <section className="imagesSection">
+      <section className="images-section">
         <LazyLoad>
           <img
             src={aboutLogo_1}
             alt="aboutLogo_1"
-            className="headerLogoOverOne headerLogo"
+            className="header-logo-over-one header-logo"
           />
         </LazyLoad>
         <LazyLoad>
           <img
             src={aboutLogo_2}
             alt="aboutLogo_2"
-            className="headerLogoOverTwo headerLogo"
+            className="header-logo-over-two header-logo"
           />
         </LazyLoad>
       </section>

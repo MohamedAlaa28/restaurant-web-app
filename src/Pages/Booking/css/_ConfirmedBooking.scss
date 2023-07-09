@@ -1,22 +1,26 @@
 $radius : 16px;
-$globalPadding : 1% 15%;
-
-.booking-header {
-    font-size: var(--h1-font-size);
-    margin: auto;
-    text-align: center;
-}
+$globalPadding : 0 15%;
 
 .Confirmation {
     font-size: var(--form-font-size);
+
     p {
         text-align: center;
         font-size: var(--h1-font-size);
-        margin: auto;
+        margin: auto 0;
+        border-top: 0.15vw solid #495E57;
+        color:#495E57;
     }
 
     section {
         display: grid;
+        grid-gap: 2.5%;
+        margin: $globalPadding;
+        margin-bottom: 1%;
+        background-color: #EDEFEE;
+        border-radius: $radius;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+            rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
         @media (min-width: 701px) {
             grid-template-columns: 1fr 1fr;
@@ -27,14 +31,7 @@ $globalPadding : 1% 15%;
             grid-gap: 2.5%;
         }
 
-        grid-gap: 2.5%;
-        margin: $globalPadding;
-        background-color: #EDEFEE;
-        border-radius: $radius;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-        rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
-        .confirmLogo {
+        img {
             box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
             width: 100%;
             height: 100%;
