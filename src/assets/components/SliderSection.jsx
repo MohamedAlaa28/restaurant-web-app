@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "../css/_SliderSection.scss";
-
+import { HomeContext } from "../../App";
+import NotFound from "../images/NotFound.svg";
 const SliderSection = ({ type, cardsData, Card }) => {
+  const data = useContext(HomeContext);
+
   const cardsRef = useRef(null);
   const scrollLeft = () => {
     cardsRef.current.scrollBy({
@@ -18,6 +21,39 @@ const SliderSection = ({ type, cardsData, Card }) => {
     });
   };
 
+  const ProductCards = () => {
+    if (!data.meals || data.meals.length === 0) {
+      return <img src={NotFound} alt="NotFound" className="notFound" />;
+    }
+
+    return data.meals.map((category) => (
+      <Card
+        className="product-card"
+        key={category.idMeal}
+        image={category.strMealThumb}
+        name={category.strMeal}
+        description={category.strInstructions}
+      />
+    ));
+  };
+
+  const TestimonialCards = () => {
+    if (!cardsData || cardsData.length === 0) {
+      return <img src={NotFound} alt="NotFound" className="notFound" />;
+    }
+
+    return cardsData.map((cardData) => (
+      <Card
+        className="product-card"
+        key={cardData.id}
+        rate={cardData.rateValue}
+        image={cardData.Image}
+        name={cardData.name}
+        comment={cardData.comment}
+      />
+    ));
+  };
+
   return (
     <section className="cards-section">
       <button className="prev-button" onClick={scrollLeft}>
@@ -25,28 +61,9 @@ const SliderSection = ({ type, cardsData, Card }) => {
       </button>
 
       <div className="cards" ref={cardsRef}>
-        {type === "product"
-          ? cardsData.map((cardData) => (
-              <Card
-                className="product-card"
-                key={cardData.id}
-                image={cardData.Image}
-                name={cardData.name}
-                price={cardData.price}
-                description={cardData.description}
-              />
-            ))
-          : cardsData.map((cardData) => (
-              <Card
-                className="product-card"
-                key={cardData.id}
-                rate={cardData.rateValue}
-                image={cardData.Image}
-                name={cardData.name}
-                comment={cardData.comment}
-              />
-            ))}
+        {type === "product" ? <ProductCards /> : <TestimonialCards />}
       </div>
+
       <button className="next-button" onClick={scrollRight}>
         <FaArrowRight />
       </button>

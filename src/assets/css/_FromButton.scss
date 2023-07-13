@@ -1,4 +1,4 @@
-$radius: 16px;
+$radius: 1vw;
 
 .custom-select {
     position: relative;
@@ -28,9 +28,15 @@ $radius: 16px;
         &.open {
             background-color: #EDEFEE;
         }
+
+        &:not(.selected):hover {
+            background-color: lightgrey;
+        }
     }
 
     .icon {
         font-size: var(--button-font-size);
     }
+
+
 }

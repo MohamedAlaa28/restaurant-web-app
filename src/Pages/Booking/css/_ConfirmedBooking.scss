@@ -1,28 +1,21 @@
-$radius : 16px;
+$radius : 1vw;
 $globalPadding : 0 15%;
 
-.Confirmation {
+.confirmation {
     font-size: var(--form-font-size);
 
-    p {
-        text-align: center;
-        font-size: var(--h1-font-size);
-        margin: auto 0;
-        border-top: 0.15vw solid #495E57;
-        color:#495E57;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: $radius;
     }
 
     section {
         display: grid;
-        grid-gap: 2.5%;
         margin: $globalPadding;
         margin-bottom: 1%;
-        background-color: #EDEFEE;
-        border-radius: $radius;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-            rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
-        @media (min-width: 701px) {
+        @media(min-width: 701px) {
             grid-template-columns: 1fr 1fr;
         }
 
@@ -31,40 +24,64 @@ $globalPadding : 0 15%;
             grid-gap: 2.5%;
         }
 
-        img {
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
-            width: 100%;
-            height: 100%;
-            border-radius: $radius;
-            -webkit-border-radius: $radius;
-            -moz-border-radius: $radius;
-            -ms-border-radius: $radius;
-            -o-border-radius: $radius;
-        }
-
         .booking-table {
             border-collapse: collapse;
             white-space: nowrap;
+            background-color: #495E57;
             border-radius: $radius;
-            font-family: 'Karla', sans-serif;
-            width: 80%;
-            margin: 0px auto;
+            color: #EDEFEE;
+
+            .confirm-header {
+                text-align: center;
+                font-size: var(--h1-font-size);
+                color: #f4ce14;
+                padding: $globalPadding;
+                margin: 0;
+            }
 
             tbody {
+                font-family: 'Karla', sans-serif;
+
                 tr {
-                    border-top: 1px solid #495E57;
+                    display: grid;
+                    grid-template-columns: 2fr 1fr 3fr;
+                    border-radius: $radius;
+                    background-color: #EDEFEE;
+                    margin: 1.25vw;
+                    transition: background-color 0.3s ease-in-out;
+
+
+                    td {
+                        padding: 1.25vw 0;
+                        color: #495E57;
+                        text-align: center;
+                        font-weight: bold;
+
+                        text-align: left;
+                        padding-left: 1vw;
+
+                        span {
+                            transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                            cursor: default;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: lightgrey;
+
+                        // span {
+                        //     color: black;
+                        // }
+                    }
 
                     td:nth-of-type(1) {
-                        padding: 5%;
-                        text-align: left;
+                        border-top-right-radius: $radius;
+                        border-bottom-right-radius: $radius;
                     }
 
                     td:nth-of-type(2) {
-                        text-align: center;
-                    }
-
-                    td:first-child {
-                        font-weight: bold;
+                        border-top-left-radius: $radius;
+                        border-bottom-left-radius: $radius;
                     }
                 }
 
