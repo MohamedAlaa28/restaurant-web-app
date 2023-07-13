@@ -10,7 +10,7 @@ const Footer = () => {
       <section>
       <ul>
         <li>
-          <p>document navigation</p>
+          <p className="h3">document navigation</p>
           <Link to="/">home</Link>
           <Link to="/">about</Link>
           <Link to="/">menu</Link>
@@ -21,7 +21,7 @@ const Footer = () => {
       </ul>
       <ul>
         <li>
-          <p>contact</p>
+          <p className="h3">contact</p>
           <Link to="/">address</Link>
           <Link to="/">phone number</Link>
           <Link to="/">email</Link>
@@ -29,7 +29,7 @@ const Footer = () => {
       </ul>
       <ul>
         <li>
-          <p>social media links</p>
+          <p className="h3">social media links</p>
           <Link to="/">address</Link>
           <Link to="/">phone number</Link>
           <Link to="/">email</Link>

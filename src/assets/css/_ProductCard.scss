@@ -1,10 +1,9 @@
-$radius : 16px;
+$radius : 1vw;
 
 .product-card {
     border-radius: $radius;
     background-color: #EDEFEE;
     display: grid;
-    // grid-template-rows: 3fr 4fr;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
 
@@ -13,8 +12,9 @@ $radius : 16px;
         object-fit: cover;
         border-top-left-radius: $radius;
         border-top-right-radius: $radius;
+        transition: transform 0.3s ease-in-out;
 
-        @media (max-width: 700px) {
+        @media(max-width: 700px) {
             height: 26vw;
         }
 
@@ -25,15 +25,20 @@ $radius : 16px;
 
     article {
         display: grid;
-        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
 
         div {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 3fr 1fr;
             white-space: nowrap;
             padding: 0 10%;
             font-weight: bold;
             font-size: var(--button-font-size);
+
+            p:first-child {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
 
             .price {
                 color: #EE9972;
@@ -45,31 +50,35 @@ $radius : 16px;
             padding: 0 10%;
             color: #495E57;
             font-size: var(--p-font-size);
-            font-family: 'Karla', sans-serif;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
-        button {
+        .card-button {
             cursor: pointer;
             display: flex;
             border: none;
-            // text-transform: capitalize;
+            text-transform: none;
             font-weight: bold;
             white-space: nowrap;
-            font-size: var(--p-font-size);
             justify-self: left;
             margin-left: 10%;
             background-color: #EDEFEE;
             transition: color 0.3s ease-in-out;
             align-self: center;
+            // text-decoration: none;
+            color: black;
+            font-size: var(--icon-font-size);
 
             .icon {
-                font-size: var(--icon-font-size);
+                margin-top: 0.25vw;
             }
         }
 
-        button:hover {
+        .card-button:hover {
             color: #495E57;
-            // color: #EE9972;
         }
     }
 }

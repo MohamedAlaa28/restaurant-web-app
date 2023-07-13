@@ -1,4 +1,4 @@
-$radius : 16px;
+$radius : 1vw;
 $globalPadding : 0 15%;
 
 .header {
@@ -12,7 +12,6 @@ $globalPadding : 0 15%;
 .header,
 #about {
     background-color: #495E57;
-    // background-image: url("../../../../public/little-lemon-logo.ico");
     color: white;
     display: grid;
     padding: $globalPadding;
@@ -67,7 +66,6 @@ $globalPadding : 0 15%;
         }
 
         .p {
-            font-family: 'Karla', sans-serif;
             font-size: var(--p-font-size);
             line-height: 1.5;
             padding-top: 5%;

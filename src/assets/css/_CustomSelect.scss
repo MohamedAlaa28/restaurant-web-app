@@ -1,4 +1,4 @@
-$radius: 16px;
+$radius: 1vw;
 
 .custom-select {
     .options-list {
@@ -7,6 +7,7 @@ $radius: 16px;
         position: absolute;
         width: 100%;
         background-color: #EDEFEE;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
         color: #495E57;
         border-radius: $radius;
         padding: 0;
@@ -24,6 +25,13 @@ $radius: 16px;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
         }
 
+        li:hover {
+            background-color: lightgrey;
+        }
+
+        li.selected {
+            background-color: lightgrey;
+        }
 
         li:nth-last-child(2):nth-child(odd) {
             border: none;
@@ -58,14 +66,6 @@ $radius: 16px;
 
         li:nth-child(even) {
             border-left: 1px dashed #495E57;
-        }
-
-        li.selected {
-            background-color: lightgrey;
-        }
-
-        li:hover {
-            background-color: lightgrey;
         }
     }
 }

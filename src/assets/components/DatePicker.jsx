@@ -3,7 +3,10 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import FromButton from "./FromButton";
 import "../css/_DatePicker.scss";
-import { updateTimes } from "../../Pages/Booking/components/BookingForm";
+import { updateTimes } from "../../Pages/Booking/BookingPage";
+import { validateDateFunction } from "../../utilities/validationFunctions";
+import { formatDate } from "../../utilities/formatFunctions";
+import { alertDateFunction } from "../../utilities/alertFunctions";
 
 const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
   const months = [
@@ -23,6 +26,7 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
   const weekdays = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [formattedCurrentDate, setFormattedCurrentDate] = useState(new Date());
   const [isOpen, setIsOpen] = useState(false);
 
   const handleInputChange = () => {
@@ -55,17 +59,27 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
       currentDate.getMonth(),
       day
     );
+
+    const formattedCurrentDate = selectedDate.toISOString().split("T")[0];
+    setFormattedCurrentDate(formattedCurrentDate);
+
+    const formattedDate = formatDate(selectedDate);
     setIsOpen(false);
     updateTimes(dispatch, selectedDate);
-    setState({ value: selectedDate });
-  };
-
-  const formatDate = (date) => {
-    const options = { weekday: "long", month: "long", day: "numeric" };
-    return new Intl.DateTimeFormat("en-US", options).format(date);
+    const isValid = validateDateFunction(selectedDate);
+    const error = alertDateFunction();
+    setState((prevState) => ({
+      ...prevState,
+      value: formattedDate,
+      unformattedDate: selectedDate,
+      isTouched: true,
+      isValid: isValid,
+      error: error,
+    }));
   };
 
   const renderCalendar = () => {
+    const currentDay = currentDate.getDate();
     const currentMonth = currentDate.getMonth();
     const currentYear = currentDate.getFullYear();
     const firstDay = new Date(currentYear, currentMonth, 1).getDay();
@@ -89,10 +103,18 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
     for (let i = 1; i <= daysInMonth; i++) {
       const isSelected =
         value &&
-        i === new Date(value).getDate() &&
-        currentMonth === new Date(value).getMonth() &&
-        currentYear === new Date(value).getFullYear();
-      const classNames = `calendar-day ${isSelected ? "selected" : ""}`;
+        new Date(formattedCurrentDate).toDateString() ===
+          new Date(currentYear, currentMonth, i - 1).toDateString();
+
+      const isToday =
+        i === currentDay &&
+        currentMonth === currentDate.getMonth() &&
+        currentYear === currentDate.getFullYear();
+
+      const classNames = `calendar-day ${isSelected ? "selected" : ""} ${
+        isToday ? "today" : ""
+      }`;
+
       calendarDays.push(
         <span key={i} className={classNames} onClick={() => selectDate(i)}>
           {i}
@@ -115,7 +137,7 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
 
   const renderValue = value ? (
     <>
-      {formatDate(value)}
+      {value}
       <IoIosArrowUp className="icon" />
     </>
   ) : (
@@ -128,7 +150,7 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
     <div className="custom-select">
       <FromButton
         className="date-picker-input"
-        value={value ? formatDate(value) : ""}
+        value={value ? value : ""}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
         onClick={handleInputChange}

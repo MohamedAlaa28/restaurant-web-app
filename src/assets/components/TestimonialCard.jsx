@@ -22,7 +22,7 @@ const TestimonialCard = ({ rate, image, name, comment }) => {
         <div className="stars">{renderStars()}</div>
         <div className="profile">
           <img src={image} alt="mainLogo"></img>
-          <p>{name}</p>
+          <p className="h3">{name}</p>
         </div>
       </div>
       <p className="comment">{comment}</p>

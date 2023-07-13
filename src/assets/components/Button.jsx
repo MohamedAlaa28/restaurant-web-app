@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/_Button.scss";
 
-const Button = ({ type, text, disabled, onClick }) => {
+const Button = ({ type, text, disabled, onClick, icon }) => {
   return (
     <button
       type={type}
@@ -11,6 +11,7 @@ const Button = ({ type, text, disabled, onClick }) => {
       onClick={onClick}
       aria-label="On Click"
     >
+      {/* {icon} */}
       {text}
     </button>
   );

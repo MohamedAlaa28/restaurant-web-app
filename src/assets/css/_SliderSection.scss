@@ -1,4 +1,4 @@
-$radius : 16px;
+$radius : 1vw;
 
 .cards-section {
     position: relative;
@@ -7,6 +7,7 @@ $radius : 16px;
     align-items: center;
     overflow-x: hidden;
     padding: 0 2%;
+
     .cards {
         display: flex;
         gap: 2%;
@@ -21,6 +22,10 @@ $radius : 16px;
                 flex: 0 0 50%;
             }
 
+        }
+
+        .notFound {
+            width: 100%;
         }
     }
 

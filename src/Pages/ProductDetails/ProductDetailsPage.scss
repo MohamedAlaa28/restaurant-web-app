@@ -1,0 +1,57 @@
+$radius: 1vw;
+
+.Product-details {
+    display: grid;
+    background-color: #495E57;
+    color: #EDEFEE;
+    padding: 0 15%;
+
+    .h1 {
+        justify-self: center;
+        align-self: center;
+        font-size: var(--h1-font-size);
+        margin: 0;
+        color: #F4CE14;
+    }
+
+    .details-section {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 2.5%;
+        color: #EDEFEE;
+
+        .first-section {
+            display: grid;
+            padding: 40% 0 5% 0;
+            grid-template-rows: 6fr 1fr;
+            gap: 1vw;
+
+            img {
+                width: 100%;
+                border-radius: $radius;
+                align-self: center;
+
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px, rgba(255, 255, 255, 0.05) 0px 0px 6px 1px;
+            }
+
+            Button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+
+                .icon {
+                    font-size: var(--h3-font-size);
+                }
+            }
+        }
+
+        .second-section {
+            display: grid;
+
+            .p {
+                font-size: var(--p-font-size);
+            }
+        }
+    }
+}

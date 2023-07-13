@@ -1,8 +1,9 @@
-$radius: 16px;
+$radius: 1vw;
 
 .date-picker-calendar {
   position: absolute;
   background-color: #EDEFEE;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
   color: #495E57;
   margin: 1% 0;
   padding: 7.5%;
@@ -66,6 +67,26 @@ $radius: 16px;
       border-bottom: 1px solid #495E57;
     }
 
+    span:hover {
+      background-color: lightgrey;
+    }
+
+    .prev-month,
+    .next-month {
+      background-color: lightgrey;
+      opacity: 75%;
+      cursor: context-menu;
+    }
+
+    .today {
+      background-color: lightgrey;
+    }
+
+    .selected {
+      background-color: #495E57;
+      color: #EDEFEE;
+    }
+
     @for $i from 1 through 7 {
       span:nth-child(#{$i}) {
         border-top: 1px solid #495E57;
@@ -94,21 +115,6 @@ $radius: 16px;
 
     span:nth-child(42) {
       border-bottom-right-radius: $radius;
-    }
-
-    span.prev-month,
-    span.next-month {
-      background-color: lightgrey;
-      opacity: 75%;
-      cursor: context-menu;
-    }
-
-    span.selected {
-      background-color: lightgrey;
-    }
-
-    span:hover {
-      background-color: lightgrey;
     }
   }
 

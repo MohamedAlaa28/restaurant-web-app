@@ -1,46 +1,143 @@
 import React from "react";
 import "../css/_ConfirmedBooking.scss";
-import confirmLogo from "../../../assets/images/compressed/confirm.jpg";
+import confirmLogo from "../../../assets/images/compressed/dogu-tuncer-zIKagt94IXo-unsplash.jpg";
 import { useLocation } from "react-router-dom";
+import LazyLoad from "react-lazyload";
+
 const ConfirmedBooking = () => {
   const location = useLocation();
-  const { firstName, lastName, date, time, guests, occasion } =
-    location.state || {};
+  const {
+    firstName,
+    lastName,
+    date,
+    time,
+    guests,
+    occasion,
+    phoneNumber,
+    email,
+    seating,
+  } = location.state || {};
 
   return (
-
-    <div className="Confirmation">
-      <p>Booking Details</p>
+    <div className="confirmation">
       <section>
-        <img src={confirmLogo} alt="confirmLogo"></img>
+        <LazyLoad>
+          <img src={confirmLogo} alt="confirmLogo"></img>
+        </LazyLoad>
+
         <table className="booking-table">
+          <p className="confirm-header h1">Booking Details</p>
           <tbody>
             <tr>
-              <td>First Name :</td>
-              <td>{firstName}</td>
+              <td>
+                <span>First Name </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{firstName}</span>
+              </td>
             </tr>
             <tr>
-              <td>Last Name :</td>
-              <td>{lastName}</td>
+              <td>
+                <span>Last Name </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{lastName}</span>
+              </td>
             </tr>
             <tr>
-              <td>Date :</td>
-              <td>{date}</td>
+              <td>
+                <span>Phone Number </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{phoneNumber}</span>
+              </td>
             </tr>
             <tr>
-              <td>Time :</td>
-              <td>{time}</td>
+              <td>
+                <span>Email </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{email}</span>
+              </td>
             </tr>
             <tr>
-              <td>Number Of Guests :</td>
-              <td>{guests}</td>
+              <td>
+                <span>Date </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{date}</span>
+              </td>
             </tr>
+            <tr>
+              <td>
+                <span>Time </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{time}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>Seating </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{seating}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>Number Of Diners </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{guests}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>Occasion </span>
+              </td>
+              <td>
+                <span>:</span>
+              </td>
+              <td>
+                <span>{occasion}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        {/* <table className="booking-table">
+          <tbody>
+          
             <tr>
               <td>Occasion :</td>
               <td>{occasion}</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
       </section>
     </div>
   );

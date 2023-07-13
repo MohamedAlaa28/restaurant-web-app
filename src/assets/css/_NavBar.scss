@@ -1,4 +1,4 @@
-$radius: 16px;
+$radius: 0.7vw;
 $globalPadding: 1% 15%;
 
 .nav {
@@ -38,7 +38,6 @@ $globalPadding: 1% 15%;
                 cursor: pointer;
                 font-weight: bold;
                 padding: 1% 2%;
-                font-family: 'Karla', sans-serif;
                 position: relative;
                 border-radius: $radius;
                 transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;

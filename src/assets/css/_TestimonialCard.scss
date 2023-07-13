@@ -1,4 +1,4 @@
-$radius : 16px;
+$radius : 1vw;
 
 .testimonial-card {
     border-radius: $radius;
@@ -59,7 +59,6 @@ $radius : 16px;
 
     .comment {
         font-size: var(--p-font-size);
-        font-family: 'Karla', sans-serif;
         margin: 0;
     }
 }

@@ -1,5 +1,5 @@
 body {
-  font-family: 'Markazi Text', serif;
+  font-family: 'Karla', sans-serif;
   text-transform: capitalize;
 }
 .App-logo {
@@ -56,3 +56,11 @@ body {
       --p-font-size: 2vw;
   }
 }
+
+.h1,.h2,.h3{
+  font-family: 'Markazi Text', serif;
+  font-weight: bold;
+}
+// .h1{
+
+// }

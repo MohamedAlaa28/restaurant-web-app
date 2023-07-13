@@ -27,26 +27,40 @@ const NavBar = () => {
       {navMenu ? (
         <ul className="ul-menu">
           <li>
-            <NavLink to={"/"} activeClassName="active">
+            <NavLink
+              to={"/"}
+              className={({ isActive }) => isActive && "active"}
+            >
               home
             </NavLink>
             <Link
               onClick={() => scrollToSection("about")}
               aria-label="On Click"
-              activeClassName="active"
             >
               about
             </Link>
-            <NavLink to={"/menu"} activeClassName="active">
+            <NavLink
+              to={"/menu"}
+              className={({ isActive }) => isActive && "active"}
+            >
               menu
             </NavLink>
-            <NavLink to={"/booking"} activeClassName="active">
+            <NavLink
+              to={"/booking"}
+              className={({ isActive }) => isActive && "active"}
+            >
               Reservations
             </NavLink>
-            <NavLink to={"/orders"} activeClassName="active">
+            <NavLink
+              to={"/orders"}
+              className={({ isActive }) => isActive && "active"}
+            >
               order online
             </NavLink>
-            <NavLink to={"/profile"} activeClassName="active">
+            <NavLink
+              to={"/profile"}
+              className={({ isActive }) => isActive && "active"}
+            >
               {/* <FaUser /> */}
               login
             </NavLink>
@@ -56,26 +70,37 @@ const NavBar = () => {
 
       <ul className="ul-bar">
         <li>
-          <NavLink to={"/"} activeClassName="active">
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             home
           </NavLink>
-          <Link
-            onClick={() => scrollToSection("about")}
-            aria-label="On Click"
-            activeClassName="active"
-          >
+          <Link onClick={() => scrollToSection("about")} aria-label="On Click">
             about
           </Link>
-          <NavLink to={"/menu"} activeClassName="active">
+          <NavLink
+            to={"/menu"}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             menu
           </NavLink>
-          <NavLink to={"/booking"} activeClassName="active">
+          <NavLink
+            to={"/booking"}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Reservations
           </NavLink>
-          <NavLink to={"/orders"} activeClassName="active">
+          <NavLink
+            to={"/orders"}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             order online
           </NavLink>
-          <NavLink to={"/profile"} activeClassName="active">
+          <NavLink
+            to={"/profile"}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             {/* <FaUser /> */}
             login
           </NavLink>
