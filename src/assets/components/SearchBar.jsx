@@ -52,7 +52,11 @@ const SearchBar = () => {
         value={data.searchValue}
         onChange={handleSearchChange}
         onFocus={() => setInputFocused(true)}
-        onBlur={() => setInputFocused(false)}
+        onBlur={() =>
+          setTimeout(() => {
+            setInputFocused(false);
+          }, 150)
+        }
         placeholder="Search"
         className="search-input"
       />

@@ -129,15 +129,6 @@ const ConfirmedBooking = () => {
             </tr>
           </tbody>
         </table>
-        {/* <table className="booking-table">
-          <tbody>
-          
-            <tr>
-              <td>Occasion :</td>
-              <td>{occasion}</td>
-            </tr>
-          </tbody>
-        </table> */}
       </section>
     </div>
   );

@@ -65,6 +65,28 @@ $radius: 1vw;
       padding: 0.75vw;
       border-left: 1px solid #495E57;
       border-bottom: 1px solid #495E57;
+
+
+    }
+
+    span:hover {
+      background-color: lightgrey;
+    }
+
+    .prev-month,
+    .next-month {
+      background-color: lightgrey;
+      opacity: 75%;
+      cursor: context-menu;
+    }
+
+    .today {
+      background-color: lightgrey;
+    }
+
+    .selected {
+      background-color: #495E57;
+      color: #EDEFEE;
     }
 
     span:hover {
