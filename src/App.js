@@ -7,11 +7,11 @@ import NavBar from "./assets/components/NavBar";
 import { availableTimesReducer } from "./Pages/Booking/reducer/AvailableTimesReducer";
 import { initializeTimes } from "./Pages/Booking/BookingPage";
 import ProductDetailsPage from "./Pages/ProductDetails/ProductDetailsPage";
-
+import axios from "axios"
 const HomePage = React.lazy(() => import("./Pages/Home/HomePage"));
 const BookingPage = React.lazy(() => import("./Pages/Booking/BookingPage"));
 
-const axios = require("axios");
+// const axios = require("axios");
 export const BookingContext = createContext();
 export const HomeContext = createContext();
 export const NavBarContext = createContext();
