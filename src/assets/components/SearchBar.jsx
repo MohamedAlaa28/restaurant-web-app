@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "../css/_SearchBar.scss";
 import { BiSearch } from "react-icons/bi";
-import { NavBarContext } from "../../App";
+import { NavBarContext } from "../../App.js";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -48,7 +48,7 @@ const SearchBar = () => {
   return (
     <form className="search-form" onSubmit={handleSearchSubmit}>
       <input
-        type="text"
+        type="search"
         value={data.searchValue}
         onChange={handleSearchChange}
         onFocus={() => setInputFocused(true)}
@@ -60,9 +60,9 @@ const SearchBar = () => {
         placeholder="Search"
         className="search-input"
       />
-      {data.searchValue.trim().length > 0 && (
+      {/* {data.searchValue.trim().length > 0 && (
         <AiOutlineClose className="close-icon" onClick={removeSearchValue} />
-      )}
+      )} */}
       <button type="submit" className="search-button">
         <BiSearch />
       </button>

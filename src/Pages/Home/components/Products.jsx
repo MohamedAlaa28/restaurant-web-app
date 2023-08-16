@@ -10,11 +10,10 @@ const Products = () => {
     <main className="main">
       <section className="title-section">
         <p className="h1">this week's specials!</p>
-        <div>
-          <Link to={"./menu"}>
-            <Button text={"online menu"} />
-          </Link>
-        </div>
+
+        <Link to={"./menu"} className="link">
+          <Button text={"online menu"} />
+        </Link>
       </section>
       <SliderSection type="product" Card={ProductCard} />
     </main>

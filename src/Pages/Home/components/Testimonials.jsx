@@ -24,7 +24,7 @@ const cards = [
     name: "Max Johnson",
     rateValue: 5,
     comment:
-      "I can't get enough of Little Lemon! From the cozy ambiance to the mouthwatering flavors, everything is top-notch. My new favorite spot!",
+      "I can't get enough of Little Lemon! From the cozy ambiance to the mouthwatering flavors, everything is top-notch.",
     Image: profile_2,
   },
   {

@@ -7,26 +7,28 @@ import LazyLoad from "react-lazyload";
 
 const Header = () => {
   return (
-    <div>
-      <header className="header">
-        <article>
-          <p className="h1">little lemon</p>
-          <p className="h3">egypt</p>
-          <p className="p">
-            We re family owned Mediterranean restaurant focused on traditional
-            recipes served with a modern twist.
-          </p>
-          <Link to={"/booking"}>
-            <Button text={<>reserve <span> a</span> table</>} />
-          </Link>
-        </article>
-        <LazyLoad>
-          {/* <div className="logoContainer"> */}
-          <img src={headerLogo} alt="header-logo" className="header-logo"></img>
-          {/* </div> */}
-        </LazyLoad>
-      </header>
-    </div>
+    <header className="header">
+      <article>
+        <p className="h1">little lemon</p>
+        <p className="h3">egypt</p>
+        <p className="p">
+          We re family owned Mediterranean restaurant focused on traditional
+          recipes served with a modern twist.
+        </p>
+        <Link to={"/booking"}>
+          <Button
+            text={
+              <>
+                reserve <span> a</span> table
+              </>
+            }
+          />
+        </Link>
+      </article>
+      <LazyLoad>
+        <img src={headerLogo} alt="header-logo" className="header-logo"></img>
+      </LazyLoad>
+    </header>
   );
 };
 

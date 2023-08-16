@@ -1,6 +1,5 @@
 import "./App.scss";
 import React, { createContext, useEffect, useReducer, useState } from "react";
-import axios from "axios";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ConfirmedBooking from "./Pages/Booking/components/ConfirmedBooking";
 import LoadingSpinner from "./assets/components/LoadingSpinner";
@@ -12,6 +11,7 @@ import ProductDetailsPage from "./Pages/ProductDetails/ProductDetailsPage";
 const HomePage = React.lazy(() => import("./Pages/Home/HomePage"));
 const BookingPage = React.lazy(() => import("./Pages/Booking/BookingPage"));
 
+const axios = require("axios");
 export const BookingContext = createContext();
 export const HomeContext = createContext();
 export const NavBarContext = createContext();

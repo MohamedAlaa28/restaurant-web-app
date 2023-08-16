@@ -23,7 +23,7 @@ const CustomSelect = ({ value, setState, options, placeholder, icon }) => {
   );
 
   return (
-    <div className="custom-select">
+    <main className="custom-select">
      <FromButton value = {value} isOpen = {isOpen} setIsOpen = {setIsOpen} renderValue = {renderValue}/>
       {isOpen && (
         <ul className="options-list">
@@ -38,7 +38,7 @@ const CustomSelect = ({ value, setState, options, placeholder, icon }) => {
           ))}
         </ul>
       )}
-    </div>
+    </main>
   );
 };
 

@@ -147,7 +147,7 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
   );
 
   return (
-    <div className="custom-select">
+    <main className="custom-select">
       <FromButton
         className="date-picker-input"
         value={value ? value : ""}
@@ -157,7 +157,7 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
         renderValue={renderValue}
       />
       {isOpen && (
-        <div className="date-picker-calendar">
+        <section className="date-picker-calendar">
           <div className="date-picker-header">
             <span className="current-month-year">{`${
               months[currentDate.getMonth()]
@@ -177,9 +177,9 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
             ))}
           </div>
           <div className="calendar-days">{renderCalendar()}</div>
-        </div>
+        </section>
       )}
-    </div>
+    </main>
   );
 };
 

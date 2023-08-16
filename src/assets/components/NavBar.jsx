@@ -29,37 +29,61 @@ const NavBar = () => {
           <li>
             <NavLink
               to={"/"}
-              className={({ isActive }) => isActive && "active"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={() => setNavMenu(!navMenu)}
+              aria-label="On Click"
             >
               home
             </NavLink>
+          </li>
+          <li>
             <Link
-              onClick={() => scrollToSection("about")}
+              onClick={() => {
+                scrollToSection("about");
+                setNavMenu(!navMenu);
+              }}
               aria-label="On Click"
             >
               about
             </Link>
-            <NavLink
-              to={"/menu"}
-              className={({ isActive }) => isActive && "active"}
+          </li>
+          <li>
+            <Link
+              onClick={() => {
+                scrollToSection("main");
+                setNavMenu(!navMenu);
+              }}
+              aria-label="On Click"
             >
               menu
-            </NavLink>
+            </Link>
+          </li>
+          <li>
             <NavLink
               to={"/booking"}
-              className={({ isActive }) => isActive && "active"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={() => setNavMenu(!navMenu)}
+              aria-label="On Click"
             >
               Reservations
             </NavLink>
+          </li>
+          <li>
             <NavLink
               to={"/orders"}
-              className={({ isActive }) => isActive && "active"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={() => setNavMenu(!navMenu)}
+              aria-label="On Click"
             >
               order online
             </NavLink>
+          </li>
+          <li>
             <NavLink
               to={"/profile"}
-              className={({ isActive }) => isActive && "active"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={() => setNavMenu(!navMenu)}
+              aria-label="On Click"
             >
               {/* <FaUser /> */}
               login
@@ -73,33 +97,60 @@ const NavBar = () => {
           <NavLink
             to={"/"}
             className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setNavMenu(!navMenu)}
+            aria-label="On Click"
           >
             home
           </NavLink>
-          <Link onClick={() => scrollToSection("about")} aria-label="On Click">
+        </li>
+        <li>
+          <Link
+            onClick={() => {
+              scrollToSection("about");
+              setNavMenu(!navMenu);
+            }}
+            aria-label="On Click"
+          >
             about
           </Link>
-          <NavLink
-            to={"/menu"}
-            className={({ isActive }) => (isActive ? "active" : "")}
+        </li>
+        <li>
+          <Link
+            onClick={() => {
+              scrollToSection("main");
+              setNavMenu(!navMenu);
+            }}
+            aria-label="On Click"
           >
             menu
-          </NavLink>
+          </Link>
+        </li>
+        <li>
           <NavLink
             to={"/booking"}
             className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setNavMenu(!navMenu)}
+            aria-label="On Click"
           >
             Reservations
           </NavLink>
+        </li>
+        <li>
           <NavLink
             to={"/orders"}
             className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setNavMenu(!navMenu)}
+            aria-label="On Click"
           >
             order online
           </NavLink>
+        </li>
+        <li>
           <NavLink
             to={"/profile"}
             className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => setNavMenu(!navMenu)}
+            aria-label="On Click"
           >
             {/* <FaUser /> */}
             login

@@ -17,16 +17,16 @@ const TestimonialCard = ({ rate, image, name, comment }) => {
     return [...filledStars, ...emptyStars];
   };
   return (
-    <div className="testimonial-card">
-      <div>
+    <main className="testimonial-card">
+      <section>
         <div className="stars">{renderStars()}</div>
         <div className="profile">
           <img src={image} alt="mainLogo"></img>
           <p className="h3">{name}</p>
         </div>
-      </div>
+      </section>
       <p className="comment">{comment}</p>
-    </div>
+    </main>
   );
 };
 

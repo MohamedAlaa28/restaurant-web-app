@@ -18,7 +18,7 @@ const ProductCard = ({ meal }) => {
   };
 
   return (
-    <div className="product-card">
+    <main className="product-card">
       <header>
         <LazyLoad>
           <img src={meal.strMealThumb} alt={`productLogo ${meal.idMeal}`}></img>
@@ -38,7 +38,7 @@ const ProductCard = ({ meal }) => {
           <MdDeliveryDining className="icon" />
         </button>
       </article>
-    </div>
+    </main>
   );
 };
 

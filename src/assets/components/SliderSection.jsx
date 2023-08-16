@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "../css/_SliderSection.scss";
-import { HomeContext } from "../../App";
+import { HomeContext } from "../../App.js";
 import NotFound from "../images/NotFound.svg";
 const SliderSection = ({ type, cardsData, Card }) => {
   const data = useContext(HomeContext);

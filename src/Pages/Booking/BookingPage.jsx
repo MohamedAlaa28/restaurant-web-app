@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchAPI, submitAPI } from "../../utilities/dataAPIs";
-import { BookingContext } from "../../App";
+import { BookingContext } from "../../App.js";
 import BookingPhaseOne from "./components/BookingPhaseOne";
 import BookingPhaseTwo from "./components/BookingPhaseTwo";
 import { formatTime } from "../../utilities/formatFunctions";

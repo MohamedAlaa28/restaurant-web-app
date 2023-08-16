@@ -19,7 +19,7 @@ import {
 } from "../../../utilities/alertFunctions";
 
 import { Link } from "react-router-dom";
-import { BookingContext } from "../../../App";
+import { BookingContext } from "../../../App.js";
 import { handleBlur } from "../../../utilities/handleFunctions";
 
 const BookingPhaseTwo = ({ submitForm }) => {
@@ -68,6 +68,76 @@ const BookingPhaseTwo = ({ submitForm }) => {
               )}
             </div>
 
+            <div className="input-section mobile">
+              <label htmlFor="last-Name">
+                <BiSolidExtension className="icon" /> <span>Last Name</span>
+              </label>
+              <input
+                id="last-Name"
+                type="text"
+                value={data.lastName}
+                placeholder="Last name"
+                minLength="3"
+                maxLength="10"
+                onChange={(e) =>
+                  data.setLastName((prevState) => ({
+                    ...prevState,
+                    value: e.target.value,
+                  }))
+                }
+                onFocus={() =>
+                  data.setLastName((prevState) => ({
+                    ...prevState,
+                    isTouched: false,
+                  }))
+                }
+                onBlur={handleBlur(
+                  data.setLastName,
+                  validateNameFunction,
+                  alertNameFunction
+                )}
+              />
+              {data.lastNameValid === false && data.lastNameIsTouched && (
+                <span className="error-message">
+                  <FiAlertTriangle className="icon" /> {data.lastNameError}
+                </span>
+              )}
+            </div>
+
+            <div className="input-section mobile">
+              <label htmlFor="phone-number">
+                <BiSolidExtension className="icon" />
+                <span>Phone Number</span>
+              </label>
+              <input
+                id="phone-number"
+                type="tel"
+                value={data.phoneNumber}
+                onChange={(e) =>
+                  data.setPhoneNumber((prevState) => ({
+                    ...prevState,
+                    value: e.target.value,
+                  }))
+                }
+                onFocus={() =>
+                  data.setPhoneNumber((prevState) => ({
+                    ...prevState,
+                    isTouched: false,
+                  }))
+                }
+                onBlur={handleBlur(
+                  data.setPhoneNumber,
+                  validatePhoneNumberFunction,
+                  alertPhoneNumberFunction
+                )}
+              />
+              {data.phoneNumberValid === false && data.phoneNumberIsTouched && (
+                <span className="error-message">
+                  <FiAlertTriangle className="icon" /> {data.phoneNumberError}
+                </span>
+              )}
+            </div>
+
             <div className="input-section">
               <label htmlFor="email">
                 <BiSolidExtension className="icon" /> <span> Email</span>
@@ -100,6 +170,19 @@ const BookingPhaseTwo = ({ submitForm }) => {
                   <FiAlertTriangle className="icon" /> {data.emailError}
                 </span>
               )}
+            </div>
+
+            <div className="input-section mobile">
+              <label htmlFor="spacial-requests">
+                <span>Spacial Requests</span>
+              </label>
+              <textarea
+                id="spacial-requests"
+                name="spacial-requests"
+                rows="4"
+                cols="50"
+                placeholder="Comment"
+              ></textarea>
             </div>
 
             <div className="first-column-lower-section">
@@ -172,7 +255,9 @@ const BookingPhaseTwo = ({ submitForm }) => {
                 checked={data.accept === "accept"}
                 onChange={(e) => {
                   const isChecked = e.target.checked;
-                  data.setAccept(isChecked ? { value: "accept" } : "");
+                  data.setAccept(
+                    isChecked ? { value: "accept" } : { value: "" }
+                  );
                 }}
               />
               <label htmlFor="accept">
@@ -182,7 +267,7 @@ const BookingPhaseTwo = ({ submitForm }) => {
           </div>
 
           <div className="form-column">
-            <div className="input-section">
+            <div className="input-section desktop">
               <label htmlFor="last-Name">
                 <BiSolidExtension className="icon" /> <span>Last Name</span>
               </label>
@@ -218,7 +303,7 @@ const BookingPhaseTwo = ({ submitForm }) => {
               )}
             </div>
 
-            <div className="input-section">
+            <div className="input-section desktop">
               <label htmlFor="phone-number">
                 <BiSolidExtension className="icon" />
                 <span>Phone Number</span>
@@ -252,7 +337,7 @@ const BookingPhaseTwo = ({ submitForm }) => {
               )}
             </div>
 
-            <div className="input-section">
+            <div className="input-section desktop">
               <label htmlFor="spacial-requests">
                 <span>Spacial Requests</span>
               </label>
@@ -266,10 +351,7 @@ const BookingPhaseTwo = ({ submitForm }) => {
             </div>
           </div>
         </div>
-        <Button
-          type="submit"
-          text={"Confirm Reservation"}
-        />
+        <Button type="submit" text={"Confirm Reservation"} />
       </form>
     </section>
   );

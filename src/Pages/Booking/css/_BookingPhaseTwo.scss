@@ -8,10 +8,16 @@ $radius: 1vw;
 
         @media (min-width: 701px) {
             grid-template-columns: repeat(2, 1fr);
+
+            .mobile {
+                display: none !important;
+            }
         }
 
         @media (max-width: 700px) {
-            grid-template-rows: repeat(2, 1fr);
+            .desktop {
+                display: none !important;
+            }
         }
 
         grid-gap: 5%;
@@ -23,7 +29,10 @@ $radius: 1vw;
             display: grid;
             padding: 5% 0;
             color: white;
-            grid-template-rows: repeat(2, 1fr) 2fr;
+
+            @media (min-width: 701px) {
+                grid-template-rows: repeat(2, 1fr) 2fr;
+            }
 
             .error-message {
                 color: #EE9972;
@@ -112,6 +121,14 @@ $radius: 1vw;
                         white-space: nowrap;
                         font-size: var(--form-font-size);
 
+                        @media (max-width: 700px) {
+
+                            &:nth-child(3),
+                            &:nth-child(4) {
+                                margin-top: 7.5%;
+                            }
+                        }
+
                         .icon {
                             font-size: var(--button-font-size);
                         }
@@ -153,6 +170,11 @@ $radius: 1vw;
 
                 .seating {
                     margin: 0 20%;
+
+                    @media (max-width: 700px) {
+                        margin: 5% 25%;
+                    }
+
                     font-size: var(--button-font-size);
                     cursor: pointer;
 

@@ -4,12 +4,12 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const CardOverlay = ({ toggle, setToggle, title, content }) => {
   return (
-    <div
+    <main
       className="overlay"
       onClick={() => setToggle(!toggle)}
       aria-label="On Click"
     >
-      <div
+      <section
         className="body-section"
         onClick={(e) => e.stopPropagation()}
         aria-label="On Click"
@@ -23,8 +23,8 @@ const CardOverlay = ({ toggle, setToggle, title, content }) => {
           />
         </div>
         {content}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

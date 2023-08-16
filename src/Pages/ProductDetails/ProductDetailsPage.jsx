@@ -9,18 +9,26 @@ const ProductDetailsPage = () => {
   const location = useLocation();
   const { meal } = location.state || {};
 
-  const ingredients = [];
-
-  for (let i = 1; i <= 20; i++) {
-    if (meal[`strIngredient${i}`]) {
-      ingredients.push(
-        `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
-      );
-    } else {
-      // Stop if no more ingredients
-      break;
+  const ingredientsFunction = () => {
+    const ingredients = [];
+    for (let i = 1; i <= 20; i++) {
+      if (meal[`strIngredient${i}`]) {
+        ingredients.push(
+          `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+        );
+      } else {
+        // Stop if no more ingredients
+        break;
+      }
     }
-  }
+    return (
+      <ul>
+        {ingredients.map((ingredient, index) => (
+          <li key={index}>{ingredient}</li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <section className="Product-details">
@@ -39,11 +47,13 @@ const ProductDetailsPage = () => {
           <p className="p">{meal.strInstructions}</p>
         </div>
         {toggle && (
-         <CardOverlay className="cardOverlay" toggle={toggle} setToggle={setToggle} title="Ingredients" content={<ul>
-          {ingredients.map((ingredient, index) => (
-            <li key={index}>{ingredient}</li>
-          ))}
-        </ul>}/>
+          <CardOverlay
+            className="cardOverlay"
+            toggle={toggle}
+            setToggle={setToggle}
+            title="Ingredients"
+            content={ingredientsFunction()}
+          />
         )}
       </div>
     </section>

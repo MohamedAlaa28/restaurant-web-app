@@ -9,7 +9,7 @@ import { FiAlertTriangle } from "react-icons/fi";
 import CustomSelect from "../../../assets/components/CustomSelect";
 import DatePicker from "../../../assets/components/DatePicker";
 import bookingLogo from "../../../assets/images/compressed/dogu-tuncer-COda3_JQoWo-unsplash.jpg";
-import { BookingContext } from "../../../App";
+import { BookingContext } from "../../../App.js";
 import LazyLoad from "react-lazyload";
 import { guestsOptions, occasionOptions } from "../BookingPage";
 
@@ -117,15 +117,17 @@ const BookingPhaseOne = () => {
             </div>
           </div>
         </form>
-        <Button
-          text={
-            <>
-              reserve <span> a</span> table
-            </>
-          }
-          onClick={() => data.setNumberOfFromPage(2)}
-          aria-label="On Click"
-        />
+        <div>
+          <Button
+            text={
+              <>
+                reserve <span> a</span> table
+              </>
+            }
+            onClick={() => data.setNumberOfFromPage(2)}
+            aria-label="On Click"
+          />
+        </div>
       </div>
     </div>
   );
