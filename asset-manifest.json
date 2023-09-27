@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/restaurant-web-app/static/css/main.265248ae.css",
+    "main.js": "/restaurant-web-app/static/js/main.95ac32bb.js",
+    "static/css/4.b1feb262.chunk.css": "/restaurant-web-app/static/css/4.b1feb262.chunk.css",
+    "static/js/4.48e9f6f4.chunk.js": "/restaurant-web-app/static/js/4.48e9f6f4.chunk.js",
+    "static/js/787.c0ac620b.chunk.js": "/restaurant-web-app/static/js/787.c0ac620b.chunk.js",
+    "static/js/425.7d37839b.chunk.js": "/restaurant-web-app/static/js/425.7d37839b.chunk.js",
+    "static/media/300-0.png": "/restaurant-web-app/static/media/300-0.a26b712bcd44b920262c.png",
+    "static/media/dogu-tuncer-zIKagt94IXo-unsplash.jpg": "/restaurant-web-app/static/media/dogu-tuncer-zIKagt94IXo-unsplash.2cb5c9dc622a5740ec39.jpg",
+    "static/media/dogu-tuncer-COda3_JQoWo-unsplash.jpg": "/restaurant-web-app/static/media/dogu-tuncer-COda3_JQoWo-unsplash.4241853801d5b9bb5829.jpg",
+    "static/media/Mario and Adrian a-min.jpg": "/restaurant-web-app/static/media/Mario and Adrian a-min.b8356ee76f74b4eec77c.jpg",
+    "static/media/Mario and Adrian b-min.jpg": "/restaurant-web-app/static/media/Mario and Adrian b-min.b76f84bb2866def09715.jpg",
+    "static/media/small_logo.png": "/restaurant-web-app/static/media/small_logo.2c859235d6c57bb54176.png",
+    "static/media/restauranfood-min.jpg": "/restaurant-web-app/static/media/restauranfood-min.0a953e0eed6733041d72.jpg",
+    "static/media/300-2.jpg": "/restaurant-web-app/static/media/300-2.ab6436a6919ecc2a8e46.jpg",
+    "static/media/300-1.jpg": "/restaurant-web-app/static/media/300-1.f2cbbab6508a6d904061.jpg",
+    "static/media/300-4.jpg": "/restaurant-web-app/static/media/300-4.e2af4f8822a9826da5ed.jpg",
+    "static/media/Logo.svg": "/restaurant-web-app/static/media/Logo.2c379c7ea7eb07402bfc7700915316de.svg",
+    "static/media/300-3.jpg": "/restaurant-web-app/static/media/300-3.f16583c1eb5f1b1522ce.jpg",
+    "static/media/3604e2a8.svg": "/restaurant-web-app/static/media/08c5772c481233a30a46aeca552132053604e2a8.b75b9ad18f6e9a42460acf502a13e6c2.svg",
+    "static/media/e4a9d5da.svg": "/restaurant-web-app/static/media/b64f988f077b50ffdab0afee9de4d701e4a9d5da.d45d2197f51c63bd70238189ed30098b.svg",
+    "static/media/NotFound.svg": "/restaurant-web-app/static/media/NotFound.4e90bb93460bfd8d9e2c86b42ef91a4a.svg",
+    "index.html": "/restaurant-web-app/index.html",
+    "main.265248ae.css.map": "/restaurant-web-app/static/css/main.265248ae.css.map",
+    "main.95ac32bb.js.map": "/restaurant-web-app/static/js/main.95ac32bb.js.map",
+    "4.b1feb262.chunk.css.map": "/restaurant-web-app/static/css/4.b1feb262.chunk.css.map",
+    "4.48e9f6f4.chunk.js.map": "/restaurant-web-app/static/js/4.48e9f6f4.chunk.js.map",
+    "787.c0ac620b.chunk.js.map": "/restaurant-web-app/static/js/787.c0ac620b.chunk.js.map",
+    "425.7d37839b.chunk.js.map": "/restaurant-web-app/static/js/425.7d37839b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.265248ae.css",
+    "static/js/main.95ac32bb.js"
+  ]
+}
