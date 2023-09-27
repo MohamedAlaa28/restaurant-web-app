@@ -1,6 +1,6 @@
 import "./App.scss";
 import React, { createContext, useEffect, useReducer, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import ConfirmedBooking from "./Pages/Booking/components/ConfirmedBooking";
 import LoadingSpinner from "./assets/components/LoadingSpinner";
 import NavBar from "./assets/components/NavBar";
@@ -72,7 +72,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <NavBarContext.Provider
           value={{ searchMeals, searchValue, setSearchValue }}
         >
@@ -146,7 +146,7 @@ function App() {
           <Route path="/confirm" element={<ConfirmedBooking />} />
           <Route path="/product/:id" element={<ProductDetailsPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
