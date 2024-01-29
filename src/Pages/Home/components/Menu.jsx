@@ -1,39 +1,28 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import "../css/_Menu.scss";
 import { MdDeliveryDining } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCategories } from "../../../state/foodMenu/foodMenuSlice";
 
 const Menu = () => {
-  const [meals, setMeals] = useState([]);
-  const [categories, setCategories] = useState([]);
-  // const [categoryMeals, setCategoryMeals] = useState([]);
-  const [categoryValue, setCategoryValue] = useState("Vegetarian");
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchMealsAndCategories = async () => {
-      try {
-        const mealsResponse = await axios.get(
-          "https://www.themealdb.com/api/json/v1/1/search.php?s="
-        );
-        const mealsData = mealsResponse.data.meals;
-        setMeals(mealsData);
+    dispatch(fetchCategories());
+  }, [dispatch]);
 
-        const categoriesResponse = await axios.get(
-          "https://www.themealdb.com/api/json/v1/1/categories.php"
-        );
-        const categoriesData = categoriesResponse.data.categories;
-        setCategories(categoriesData);
-      } catch (error) {
-        console.log("Error fetching meals and categories:", error);
-      }
-    };
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
 
-    fetchMealsAndCategories();
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const handleCategoryClick = (category) => {
-    setCategoryValue(category);
-  };
+  const meals = useSelector((state) => (state.foodMenu.meals))
+  const categories = useSelector((state) => (state.foodMenu.categories))
+  const [categoryValue, setCategoryValue] = useState("Beef");
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const categoriesWithMeals = categories.filter((category) =>
     meals.some(
@@ -43,12 +32,7 @@ const Menu = () => {
     )
   );
 
-  const filteredMeals = meals.filter(
-    (meal) => meal.strCategory === categoryValue
-  );
-  const categoryMeals = (selectedMeals) => {
-    return filteredMeals.filter((meal) => meal.strCategory === selectedMeals);
-  };
+  const categoryMeals = meals.filter((meal) => meal.strCategory === categoryValue).slice(0, screenWidth < 700 ? 6 : meals.length);
 
   return (
     <main id="main" className="menu-section">
@@ -57,20 +41,19 @@ const Menu = () => {
         {categoriesWithMeals.map((category) => (
           <div
             key={category.idCategory}
-            onClick={() => handleCategoryClick(category.strCategory)}
+            onClick={() => setCategoryValue(category.strCategory)}
           >
             <div className="button-row">
               <button
-                className={` ${
-                  category.strCategory === categoryValue && "select "
-                }  category-button h3 `}
+                className={` ${category.strCategory === categoryValue && "select "
+                  }  category-button h3 `}
               >
                 {category.strCategory}
               </button>
             </div>
             <div className="meals">
               {categoryValue === category.strCategory &&
-                categoryMeals(category.strCategory).map((meal) => (
+                categoryMeals.map((meal) => (
                   <div key={meal.idMeal} className="meal">
                     <img src={meal.strMealThumb} alt={meal.strMeal} />
 

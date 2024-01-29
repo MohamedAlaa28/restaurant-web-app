@@ -9,10 +9,19 @@ export const fetchMeals = createAsyncThunk(
     }
 );
 
+export const fetchCategories = createAsyncThunk(
+    'foodMenu/fetchCategories',
+    async () => {
+        const response = await axios.get('https://www.themealdb.com/api/json/v1/1/categories.php');
+        return response.data.categories;
+    }
+);
+
 const foodMenuSlice = createSlice({
     name: 'foodMenu',
     initialState: {
         meals: [],
+        categories: [],
         status: 'idle',
         error: null,
     },
@@ -26,9 +35,9 @@ const foodMenuSlice = createSlice({
                 state.status = 'succeeded';
                 state.meals = action.payload;
             })
-            .addCase(fetchMeals.rejected, (state, action) => {
-                state.status = 'failed';
-                state.error = action.error.message;
+            .addCase(fetchCategories.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+                state.categories = action.payload;
             })
     },
 });
