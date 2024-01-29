@@ -1,11 +1,12 @@
-import React, { useContext, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "../css/_SliderSection.scss";
-import { HomeContext } from "../../App.js";
 import NotFound from "../images/NotFound.svg";
-const SliderSection = ({ type, cardsData, Card }) => {
-  const data = useContext(HomeContext);
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMeals } from "../../state/foodMenu/foodMenuSlice.js";
 
+const SliderSection = ({ type, cardsData, Card }) => {
+  const meals = useSelector((state) => (state.foodMenu.meals))
   const cardsRef = useRef(null);
   const scrollLeft = () => {
     cardsRef.current.scrollBy({
@@ -21,12 +22,18 @@ const SliderSection = ({ type, cardsData, Card }) => {
     });
   };
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMeals());
+  }, [dispatch]);
+
   const ProductCards = () => {
-    if (!data.meals || data.meals.length === 0) {
+    if (!meals || meals.length === 0) {
       return <img src={NotFound} alt="NotFound" className="notFound" />;
     }
 
-    return data.meals.map((meal) => (
+    return meals.map((meal) => (
       <Card
         className="product-card"
         key={meal.idMeal}

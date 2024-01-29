@@ -1,7 +1,7 @@
 import React from "react";
-import "../css/_FromButton.scss";
+import "../css/_FormButton.scss";
 
-const FromButton = ({ value, isOpen, setIsOpen, renderValue }) => {
+const FormButton = ({ value, isOpen, setIsOpen, renderValue }) => {
   const selectHeaderClasses = value
     ? "select-header selected"
     : `select-header ${isOpen ? "open" : ""}`;
@@ -12,4 +12,4 @@ const FromButton = ({ value, isOpen, setIsOpen, renderValue }) => {
   );
 };
 
-export default FromButton;
+export default FormButton;

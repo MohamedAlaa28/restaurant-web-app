@@ -7,13 +7,15 @@ import { HiOutlineCalendar } from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiAlertTriangle } from "react-icons/fi";
 import CustomSelect from "../../../assets/components/CustomSelect";
-import DatePicker from "../../../assets/components/DatePicker";
+import DatePicker from "../../../assets/components/DatePicker.jsx";
 import bookingLogo from "../../../assets/images/compressed/dogu-tuncer-COda3_JQoWo-unsplash.jpg";
 import { BookingContext } from "../../../App.js";
 import LazyLoad from "react-lazyload";
 import { guestsOptions, occasionOptions } from "../BookingPage";
+import { useSelector } from "react-redux";
 
 const BookingPhaseOne = () => {
+  const times = useSelector((state) => (state.times))
   const data = useContext(BookingContext);
 
   return (
@@ -24,7 +26,6 @@ const BookingPhaseOne = () => {
 
       <div className="from-sub-section">
         <p className="booking-header h1">Reservations</p>
-
         <form className="form">
           <div className="form-column">
             <div className="radio-section">
@@ -51,7 +52,7 @@ const BookingPhaseOne = () => {
                 id="res-date"
                 value={data.date}
                 setState={data.setDate}
-                dispatch={data.dispatch}
+                // dispatch={data.dispatch}
                 placeholder="Select Date"
                 icon={<HiOutlineCalendar className="icon" />}
               />
@@ -110,7 +111,7 @@ const BookingPhaseOne = () => {
                 id="res-time"
                 value={data.time}
                 setState={data.setTime}
-                options={data.availableTimes}
+                options={times}
                 placeholder={"Select time"}
                 icon={<MdOutlineAlarm className="icon" />}
               />

@@ -1,30 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/_SearchBar.scss";
 import { BiSearch } from "react-icons/bi";
-import { NavBarContext } from "../../App.js";
 import { useNavigate } from "react-router-dom";
-import { AiOutlineClose } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { searchMeals } from "../../state/foodSearch/foodSearchSlice";
 
 const SearchBar = () => {
-  const data = useContext(NavBarContext);
+  const [searchValue, setSearchValue] = useState("");
+  const meals = useSelector((state) => (state.foodSearch.meals))
 
   const [inputFocused, setInputFocused] = useState(false);
 
   const handleSearchChange = (e) => {
-    data.setSearchValue(e.target.value);
+    setSearchValue(e.target.value);
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     setInputFocused(false);
-  };
-
-  const removeSearchValue = () => {
-    data.setSearchValue("");
-    const inputElement = document.querySelector(".search-input");
-    if (inputElement) {
-      inputElement.focus();
-    }
   };
 
   const navigate = useNavigate();
@@ -33,7 +26,7 @@ const SearchBar = () => {
   };
 
   const ProductCards = () => {
-    return data.searchMeals?.slice(0, 6)?.map((meal) => (
+    return meals?.slice(0, 6)?.map((meal) => (
       <button
         key={meal.idMeal}
         onClick={() => handleClickLink(meal)}
@@ -45,11 +38,17 @@ const SearchBar = () => {
     ));
   };
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(searchMeals(searchValue));
+  }, [dispatch, searchValue]);
+
   return (
     <form className="search-form" onSubmit={handleSearchSubmit}>
       <input
         type="search"
-        value={data.searchValue}
+        value={searchValue}
         onChange={handleSearchChange}
         onFocus={() => setInputFocused(true)}
         onBlur={() =>
@@ -60,14 +59,11 @@ const SearchBar = () => {
         placeholder="Search"
         className="search-input"
       />
-      {/* {data.searchValue.trim().length > 0 && (
-        <AiOutlineClose className="close-icon" onClick={removeSearchValue} />
-      )} */}
       <button type="submit" className="search-button">
         <BiSearch />
       </button>
       {inputFocused && (
-        <div className={`${data.searchMeals && "search-shadow"} search-menu`}>
+        <div className={`${meals && "search-shadow"} search-menu`}>
           {ProductCards()}
         </div>
       )}

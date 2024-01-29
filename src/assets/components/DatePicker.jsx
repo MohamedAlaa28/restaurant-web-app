@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import FromButton from "./FromButton";
+import FromButton from "./FormButton";
 import "../css/_DatePicker.scss";
-import { updateTimes } from "../../Pages/Booking/BookingPage";
 import { validateDateFunction } from "../../utilities/validationFunctions";
-import { formatDate } from "../../utilities/formatFunctions";
+import { formatDate, formatTime } from "../../utilities/formatFunctions";
 import { alertDateFunction } from "../../utilities/alertFunctions";
+import { fetchAPI } from "../../utilities/dataAPIs";
+import { availableTimes } from "../../state/printedTime/printedTimeSlice";
+import { useDispatch } from "react-redux";
 
-const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
+const DatePicker = ({ value, setState, placeholder, icon }) => {
+  const dispatch = useDispatch();
+
   const months = [
     "January",
     "February",
@@ -65,7 +69,7 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
 
     const formattedDate = formatDate(selectedDate);
     setIsOpen(false);
-    updateTimes(dispatch, selectedDate);
+
     const isValid = validateDateFunction(selectedDate);
     const error = alertDateFunction();
     setState((prevState) => ({
@@ -76,6 +80,11 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
       isValid: isValid,
       error: error,
     }));
+
+    // console.log(selectedDate)
+    const date = fetchAPI(selectedDate);
+    const updatedTimes = date.map(formatTime);
+    dispatch(availableTimes(updatedTimes));
   };
 
   const renderCalendar = () => {
@@ -104,19 +113,18 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
       const isSelected =
         value &&
         new Date(formattedCurrentDate).toDateString() ===
-          new Date(currentYear, currentMonth, i - 1).toDateString();
+        new Date(currentYear, currentMonth, i - 1).toDateString();
 
       const isToday =
         i === currentDay &&
         currentMonth === currentDate.getMonth() &&
         currentYear === currentDate.getFullYear();
 
-      const classNames = `calendar-day ${isSelected ? "selected" : ""} ${
-        isToday ? "today" : ""
-      }`;
+      const classNames = `calendar-day ${isSelected ? "selected" : ""} ${isToday ? "today" : ""
+        }`;
 
       calendarDays.push(
-        <span key={i} className={classNames} onClick={() => selectDate(i)}>
+        <span key={i} className={classNames} onClick={() => selectDate(i)} >
           {i}
         </span>
       );
@@ -159,9 +167,8 @@ const DatePicker = ({ value, setState, dispatch, placeholder, icon }) => {
       {isOpen && (
         <section className="date-picker-calendar">
           <div className="date-picker-header">
-            <span className="current-month-year">{`${
-              months[currentDate.getMonth()]
-            } ${currentDate.getFullYear()}`}</span>
+            <span className="current-month-year">{`${months[currentDate.getMonth()]
+              } ${currentDate.getFullYear()}`}</span>
             <div className="nex-prev-section">
               <button className="prev-month-btn" onClick={prevMonth}>
                 <MdKeyboardArrowLeft />

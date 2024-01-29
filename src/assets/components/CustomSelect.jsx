@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import "../css/_CustomSelect.scss";
-import FromButton from "./FromButton";
+import FromButton from "./FormButton";
 
 const CustomSelect = ({ value, setState, options, placeholder, icon }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,7 @@ const CustomSelect = ({ value, setState, options, placeholder, icon }) => {
 
   return (
     <main className="custom-select">
-     <FromButton value = {value} isOpen = {isOpen} setIsOpen = {setIsOpen} renderValue = {renderValue}/>
+      <FromButton value={value} isOpen={isOpen} setIsOpen={setIsOpen} renderValue={renderValue} />
       {isOpen && (
         <ul className="options-list">
           {options.map((option) => (

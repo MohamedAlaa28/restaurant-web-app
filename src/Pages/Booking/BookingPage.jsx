@@ -1,23 +1,9 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { fetchAPI, submitAPI } from "../../utilities/dataAPIs";
 import { BookingContext } from "../../App.js";
 import BookingPhaseOne from "./components/BookingPhaseOne";
 import BookingPhaseTwo from "./components/BookingPhaseTwo";
-import { formatTime } from "../../utilities/formatFunctions";
-
-export const initializeTimes = () => {
-  const currentDate = new Date();
-  const times = fetchAPI(currentDate);
-  const availableTimes = times.map(formatTime);
-  return availableTimes.length > 0 ? availableTimes : ["No available times"];
-};
-
-export const updateTimes = (dispatch, selectedDate) => {
-  const times = fetchAPI(selectedDate);
-  const updatedTimes = times.map(formatTime);
-  dispatch({ type: "UPDATE_TIMES", times: updatedTimes });
-};
+import { submitAPI } from "../../utilities/dataAPIs";
 
 export const guestsOptions = [...Array(10)].map(
   (_, index) => `${index + 1} ${index === 0 ? "Diner" : "Diners"}`
@@ -26,6 +12,7 @@ export const guestsOptions = [...Array(10)].map(
 export const occasionOptions = ["Birthday", "Anniversary"];
 
 const BookingPage = () => {
+  // const dispatch = useDispatch()
   const data = useContext(BookingContext);
 
   const navigate = useNavigate();
