@@ -1,0 +1,173 @@
+$radius : 1vw;
+$radius_s : 0.5vw;
+
+.side-bar {
+    height: 100%;
+    width: 43dvh;
+    max-width: 46dvh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: white;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+
+    .side-bar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1vw;
+
+        .close-icon {
+            color: #EDEFEE;
+            align-self: center;
+            justify-self: center;
+            background-color: #495E57;
+            padding: 1%;
+            border-radius: 0.5vw;
+            cursor: pointer;
+            font-size: var(--icon-font-size);
+            transition: color 0.3s ease-in-out;
+        }
+
+        .close-icon:hover {
+            color: #EE9972;
+        }
+
+        .clear-button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5vw;
+            background-color: #EDEFEE;
+            color: #495E57;
+            font-weight: bold;
+            border: none;
+            padding: 2% 3%;
+            font-size: var(--form-font-size);
+            cursor: pointer;
+            border-radius: 0.5vw;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+
+            .icon {
+                transition: color 0.3s ease-in-out;
+            }
+        }
+
+        .clear-button:hover {
+            .icon {
+                color: red;
+            }
+        }
+    }
+
+    .menu {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+        border-radius: $radius;
+        background-color: #EDEFEE;
+        height: 100%;
+        margin: 0.5vw;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #495E57;
+            border-top-right-radius: $radius;
+            border-bottom-right-radius: $radius;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(73, 94, 87, 0.8);
+        }
+
+        .menu-body {
+            margin: 2.5vw 0vw;
+
+            @media (max-width: 700px) {
+                margin-top: 4.25vw;
+            }
+
+            .shadow {
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+            }
+
+            &.shadow {
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+            }
+
+            .sub-menu {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 5%;
+
+                border-radius: $radius;
+                // font-size: var(--p-font-size);
+                align-items: center;
+                margin: 0.5vw;
+                padding: 0;
+                border: none;
+                color: #495E57;
+            }
+
+            img {
+                width: 100%;
+                border-radius: $radius;
+                cursor: pointer;
+            }
+
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-decoration: none;
+                margin: 0;
+            }
+
+            .name {
+                display: flex;
+                align-self: center;
+                justify-self: center;
+                flex-direction: column;
+            }
+
+            .count {
+                display: flex;
+
+                button {
+                    border: none;
+                    background: none;
+                    // font-size: var(--p-font-size);
+                    // font-size: 15px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: color 0.3s ease-in-out;
+                }
+
+                button:hover {
+                    color: #EE9972;
+                }
+
+                p {
+                    background-color: #495E57;
+                    color: white;
+                    padding: 10%;
+                    border-radius: $radius_s;
+                }
+            }
+        }
+
+        .check-out {
+            button {
+                width: 95%;
+                margin-left: 2.5%;
+                margin-right: 2.5%;
+            }
+        }
+    }
+}

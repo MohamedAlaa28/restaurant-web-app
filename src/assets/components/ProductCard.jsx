@@ -3,8 +3,13 @@ import { MdDeliveryDining } from "react-icons/md";
 import "../css/_ProductCard.scss";
 import LazyLoad from "react-lazyload";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { cartAddItem, cartToggle } from "../../state/cart/cartSlice";
 
 const ProductCard = ({ meal }) => {
+  const sideBarMeals = useSelector((state) => (state.cart.meals))
+  const dispatch = useDispatch();
+
   const getRandomPrice = () => {
     const min = 5;
     const max = 100;
@@ -17,11 +22,18 @@ const ProductCard = ({ meal }) => {
     navigate(`/product/${meal.idMeal}`, { state: { meal: meal } });
   };
 
+  const addToCart = (meal) => {
+    dispatch(cartToggle(true))
+    if (!sideBarMeals.includes(meal)) {
+      dispatch(cartAddItem(meal))
+    }
+  };
+
   return (
     <main className="product-card">
       <header>
         <LazyLoad>
-          <img src={meal.strMealThumb} alt={`productLogo ${meal.idMeal}`}></img>
+          <img src={meal.strMealThumb} alt={`productLogo ${meal.idMeal}`} onClick={() => handleClickLink(meal)} aria-label="On Click"></img>
         </LazyLoad>
       </header>
       <article>
@@ -32,7 +44,8 @@ const ProductCard = ({ meal }) => {
         <p className="card-description">{meal.strInstructions}</p>
         <button
           className="card-button h3"
-          onClick={() => handleClickLink(meal)}
+          onClick={() => addToCart(meal)}
+          aria-label="On Click"
         >
           Order a Delivery &nbsp;
           <MdDeliveryDining className="icon" />

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import "./ProductDetailsPage.scss";
+import "./_ProductDetailsPage.scss";
 import { useLocation } from "react-router-dom";
 import { PiBowlFood } from "react-icons/pi";
 import Button from "../../assets/components/Button";
 import CardOverlay from "../../assets/components/CardOverlay";
+
 const ProductDetailsPage = () => {
   const [toggle, setToggle] = useState(false);
   const location = useLocation();

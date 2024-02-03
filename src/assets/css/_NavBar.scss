@@ -29,6 +29,7 @@ $globalPadding: 1% 15%;
 
         li {
             display: flex;
+            position: relative;
 
             @media (min-width: 701px) {
                 grid-template-columns: repeat(6, 1fr);
@@ -43,6 +44,9 @@ $globalPadding: 1% 15%;
                 position: relative;
                 border-radius: $radius;
                 transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             a:hover {
@@ -84,7 +88,8 @@ $globalPadding: 1% 15%;
 
         li {
             justify-content: center;
-            padding: 5%;
+            padding: 2.5%;
+            position: relative;
 
             a {
                 padding: 0.75vw;
@@ -101,6 +106,7 @@ $globalPadding: 1% 15%;
         border: none;
         padding: 0;
         cursor: pointer;
+        transition: transform 0.3s ease-in-out;
 
         @media (max-width: 700px) {
             display: block;
@@ -109,6 +115,31 @@ $globalPadding: 1% 15%;
         &.open {
             transform: rotate(90deg);
         }
+    }
+
+    .count {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 1;
+
+        @media(max-width: 700px) {
+            top: -2.9vw;
+            left: 9.5vw;
+            padding: 0 2.5%;
+        }
+
+        @media(min-width: 701px) {
+            top: -1.9vw;
+            right: 0.7vw;
+            padding: 0 20%;
+        }
+
+        background-color: #EE9972;
+        border-radius: 100%;
+
+        font-weight:bold;
     }
 }
 

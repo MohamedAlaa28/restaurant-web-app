@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import logo from "../icons/Logo.svg";
 import "../css/_NavBar.scss";
 import { AiOutlineMenu } from "react-icons/ai";
-// import { FaUser } from "react-icons/fa";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { FaRegUser } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import SearchBar from "./SearchBar";
+import { useSelector } from "react-redux";
+import { cartToggle } from "../../state/cart/cartSlice";
+import { useDispatch } from "react-redux";
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const sideBarMeals = useSelector((state) => (state.cart.meals))
+  // const count = useSelector((state) => (state.cart.count));
   const [navMenu, setNavMenu] = useState(false);
 
   const appearNavMenu = () => {
@@ -85,9 +92,19 @@ const NavBar = () => {
               onClick={() => setNavMenu(!navMenu)}
               aria-label="On Click"
             >
-              {/* <FaUser /> */}
-              login
+              <FaRegUser />
             </NavLink>
+          </li>
+          <li>
+            {sideBarMeals.length > 0
+              &&
+              <p className="count">{sideBarMeals.length}</p>
+            }
+            <Link
+              onClick={() => dispatch(cartToggle(true))}
+              aria-label="On Click">
+              <MdOutlineShoppingCart className="" />
+            </Link>
           </li>
         </ul>
       ) : null}
@@ -152,9 +169,19 @@ const NavBar = () => {
             onClick={() => setNavMenu(!navMenu)}
             aria-label="On Click"
           >
-            {/* <FaUser /> */}
-            login
+            <FaRegUser />
           </NavLink>
+        </li>
+        <li>
+          {sideBarMeals.length > 0
+            &&
+            <p className="count">{sideBarMeals.length}</p>
+          }
+          <Link
+            onClick={() => dispatch(cartToggle(true))}
+            aria-label="On Click">
+            <MdOutlineShoppingCart className="" />
+          </Link>
         </li>
       </ul>
 

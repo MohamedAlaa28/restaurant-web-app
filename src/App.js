@@ -5,6 +5,7 @@ import ConfirmedBooking from "./Pages/Booking/components/ConfirmedBooking";
 import LoadingSpinner from "./assets/components/LoadingSpinner";
 import NavBar from "./assets/components/NavBar";
 import ProductDetailsPage from "./Pages/ProductDetails/ProductDetailsPage";
+import SideBar from "./assets/components/SideBar";
 
 const HomePage = React.lazy(() => import("./Pages/Home/HomePage"));
 const BookingPage = React.lazy(() => import("./Pages/Booking/BookingPage"));
@@ -26,11 +27,11 @@ function App() {
   const [accept, setAccept] = useState({ value: "" });
   const [numberOfFromPage, setNumberOfFromPage] = useState(1);
 
-
   return (
     <div className="App">
       <HashRouter>
         <NavBar />
+        <SideBar />
         <Routes>
           <Route
             path="/"
@@ -72,6 +73,7 @@ function App() {
                     dateError: date.error,
                     emailError: email.error,
                     phoneNumberError: phoneNumber.error,
+                    numberOfFromPage,
                     setFirstName,
                     setLastName,
                     setTime,
@@ -82,7 +84,6 @@ function App() {
                     setEmail,
                     setPhoneNumber,
                     setAccept,
-                    numberOfFromPage,
                     setNumberOfFromPage,
                   }}
                 >
