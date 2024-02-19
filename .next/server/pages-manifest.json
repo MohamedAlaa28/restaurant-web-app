@@ -1,0 +1,23 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/AutoTwoWaySync": "pages/AutoTwoWaySync.html",
+  "/CommissionHistory": "pages/CommissionHistory.html",
+  "/Dashboard": "pages/Dashboard.html",
+  "/ForgotPassword": "pages/ForgotPassword.html",
+  "/Help": "pages/Help.html",
+  "/Login": "pages/Login.html",
+  "/Orders": "pages/Orders.html",
+  "/ProductBulkUpload": "pages/ProductBulkUpload.html",
+  "/ProductReviews": "pages/ProductReviews.html",
+  "/Products": "pages/Products.html",
+  "/Support": "pages/Support.html",
+  "/Table": "pages/Table.html",
+  "/api/hello": "pages/api/hello.js",
+  "/": "pages/index.html",
+  "/message/[pid]": "pages/message/[pid].html",
+  "/orders/[pid]": "pages/orders/[pid].html",
+  "/productReviews/[pid]": "pages/productReviews/[pid].html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
