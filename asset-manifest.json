@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/restaurant-web-app/static/css/main.76153e71.css",
-    "main.js": "/restaurant-web-app/static/js/main.50890ee1.js",
-    "static/css/4.1691007d.chunk.css": "/restaurant-web-app/static/css/4.1691007d.chunk.css",
-    "static/js/4.c4db49ce.chunk.js": "/restaurant-web-app/static/js/4.c4db49ce.chunk.js",
-    "static/css/124.3f361200.chunk.css": "/restaurant-web-app/static/css/124.3f361200.chunk.css",
+    "main.css": "/restaurant-web-app/static/css/main.6057be9c.css",
+    "main.js": "/restaurant-web-app/static/js/main.05e0926a.js",
+    "static/css/4.ed2d20e6.chunk.css": "/restaurant-web-app/static/css/4.ed2d20e6.chunk.css",
+    "static/js/4.f98a4e36.chunk.js": "/restaurant-web-app/static/js/4.f98a4e36.chunk.js",
+    "static/css/124.ae647449.chunk.css": "/restaurant-web-app/static/css/124.ae647449.chunk.css",
     "static/js/124.03bef8ad.chunk.js": "/restaurant-web-app/static/js/124.03bef8ad.chunk.js",
     "static/js/787.c0ac620b.chunk.js": "/restaurant-web-app/static/js/787.c0ac620b.chunk.js",
     "static/js/532.557b5bc7.chunk.js": "/restaurant-web-app/static/js/532.557b5bc7.chunk.js",
@@ -25,18 +25,18 @@
     "static/media/e4a9d5da.svg": "/restaurant-web-app/static/media/b64f988f077b50ffdab0afee9de4d701e4a9d5da.d45d2197f51c63bd70238189ed30098b.svg",
     "static/media/NotFound.svg": "/restaurant-web-app/static/media/NotFound.4e90bb93460bfd8d9e2c86b42ef91a4a.svg",
     "index.html": "/restaurant-web-app/index.html",
-    "main.76153e71.css.map": "/restaurant-web-app/static/css/main.76153e71.css.map",
-    "main.50890ee1.js.map": "/restaurant-web-app/static/js/main.50890ee1.js.map",
-    "4.1691007d.chunk.css.map": "/restaurant-web-app/static/css/4.1691007d.chunk.css.map",
-    "4.c4db49ce.chunk.js.map": "/restaurant-web-app/static/js/4.c4db49ce.chunk.js.map",
-    "124.3f361200.chunk.css.map": "/restaurant-web-app/static/css/124.3f361200.chunk.css.map",
+    "main.6057be9c.css.map": "/restaurant-web-app/static/css/main.6057be9c.css.map",
+    "main.05e0926a.js.map": "/restaurant-web-app/static/js/main.05e0926a.js.map",
+    "4.ed2d20e6.chunk.css.map": "/restaurant-web-app/static/css/4.ed2d20e6.chunk.css.map",
+    "4.f98a4e36.chunk.js.map": "/restaurant-web-app/static/js/4.f98a4e36.chunk.js.map",
+    "124.ae647449.chunk.css.map": "/restaurant-web-app/static/css/124.ae647449.chunk.css.map",
     "124.03bef8ad.chunk.js.map": "/restaurant-web-app/static/js/124.03bef8ad.chunk.js.map",
     "787.c0ac620b.chunk.js.map": "/restaurant-web-app/static/js/787.c0ac620b.chunk.js.map",
     "532.557b5bc7.chunk.js.map": "/restaurant-web-app/static/js/532.557b5bc7.chunk.js.map",
     "425.7d37839b.chunk.js.map": "/restaurant-web-app/static/js/425.7d37839b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76153e71.css",
-    "static/js/main.50890ee1.js"
+    "static/css/main.6057be9c.css",
+    "static/js/main.05e0926a.js"
   ]
 }
