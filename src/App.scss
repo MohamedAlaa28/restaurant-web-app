@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
 body {
   font-family: 'Karla', sans-serif;
   text-transform: capitalize;
@@ -5,7 +9,7 @@ body {
 
 body::-webkit-scrollbar {
   width: 12px;
-  background-color: white;
+  background-color: #EDEFEE;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -59,6 +63,8 @@ body::-webkit-scrollbar-thumb:hover {
   --icon-font-size: 1.35vw;
   --form-font-size: 1.05vw;
   --p-font-size: 1vw;
+  --radius: 1vw;
+  --small-radius: 0.5vw;
 }
 
 @media (max-width: 700px) {
@@ -69,6 +75,8 @@ body::-webkit-scrollbar-thumb:hover {
     --icon-font-size: 2.55vw;
     --form-font-size: 2.55vw;
     --p-font-size: 2vw;
+    --radius: 2vw;
+    --small-radius: 1vw;
   }
 }
 

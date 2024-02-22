@@ -1,6 +1,6 @@
 import "./App.scss";
 import React, { createContext, useState } from "react";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import ConfirmedBooking from "./Pages/Booking/components/ConfirmedBooking";
 import LoadingSpinner from "./assets/components/LoadingSpinner";
 import NavBar from "./assets/components/NavBar";

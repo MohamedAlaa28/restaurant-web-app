@@ -46,44 +46,44 @@ const Menu = () => {
     )
   );
 
-  const categoryMeals = meals.filter((meal) => meal.strCategory === categoryValue).slice(0, screenWidth < 700 ? 6 : meals.length);
+  const categoryMeals = meals.filter((meal) => meal.strCategory === categoryValue);
 
   return (
     <main id="main" className="menu-section">
       <h1 className="h1">Menu</h1>
       <section className="menu-sub-section">
-        {categoriesWithMeals.map((category) => (
-          <div
+       <div className="buttons">
+       {categoriesWithMeals.map((category) => (
+          <button
+            className={` ${category.strCategory === categoryValue && "select button-row "
+              }  category-button h3 `}
             key={category.idCategory}
             onClick={() => setCategoryValue(category.strCategory)}
+          // className=""
           >
-            <div className="button-row">
-              <button
-                className={` ${category.strCategory === categoryValue && "select "
-                  }  category-button h3 `}
-              >
-                {category.strCategory}
-              </button>
-            </div>
-            <div className="meals">
-              {categoryValue === category.strCategory &&
-                categoryMeals.map((meal) => (
-                  <div key={meal.idMeal} className="meal">
-                    <img src={meal.strMealThumb} alt={meal.strMeal} onClick={() => handleClickLink(meal)} />
+            {category.strCategory}
+          </button>
+        ))}
+       </div>
+        {categoriesWithMeals.map((category) => (
+          <div className="meals">
+            {categoryValue === category.strCategory &&
+              categoryMeals.map((meal) => (
+                <div key={meal.idMeal} className="meal">
+                  <img src={meal.strMealThumb} alt={meal.strMeal} onClick={() => handleClickLink(meal)} />
 
-                    <div>
-                      <p className="h3">{meal.strMeal}</p>
-                      <p className="price h3">30 $</p>
-                    </div>
-
-                    <button
-                      className="icon-button"
-                      onClick={() => addToCart(meal)}>
-                      <MdDeliveryDining className="icon" />
-                    </button>
+                  <div>
+                    <p className="h3">{meal.strMeal}</p>
+                    <p className="price h3">30 $</p>
                   </div>
-                ))}
-            </div>
+
+                  <button
+                    className="icon-button"
+                    onClick={() => addToCart(meal)}>
+                    <MdDeliveryDining className="icon" />
+                  </button>
+                </div>
+              ))}
           </div>
         ))}
       </section>

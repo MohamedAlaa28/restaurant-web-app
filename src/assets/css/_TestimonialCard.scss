@@ -1,7 +1,5 @@
-$radius : 1vw;
-
 .testimonial-card {
-    border-radius: $radius;
+    border-radius: var(--radius);
     background-color: #EDEFEE;
     display: grid;
     grid-template-rows: 1fr 1fr;
