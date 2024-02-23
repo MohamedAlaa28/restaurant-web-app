@@ -76,14 +76,14 @@ const NavBar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to={"/orders"}
+            <Link
+              // to={"/"}
               className={({ isActive }) => (isActive ? "active" : "")}
               onClick={() => setNavMenu(!navMenu)}
               aria-label="On Click"
             >
               order online
-            </NavLink>
+            </Link>
           </li>
           <li>
             <NavLink
@@ -153,14 +153,14 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to={"/orders"}
+          <Link
+            // to={"/"}
             className={({ isActive }) => (isActive ? "active" : "")}
             onClick={() => setNavMenu(!navMenu)}
             aria-label="On Click"
           >
             order online
-          </NavLink>
+          </Link>
         </li>
         <li>
           <NavLink

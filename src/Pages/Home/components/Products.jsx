@@ -11,7 +11,9 @@ const Products = () => {
       <section className="title-section">
         <p className="h1">this week's specials!</p>
 
-        <Link to={"./menu"} className="link">
+        <Link
+          // to={"./menu"}
+          className="link">
           <Button text={"online menu"} />
         </Link>
       </section>
